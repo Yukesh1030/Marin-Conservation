@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guides, Research & FAQs | Marine Conservation</title>
+  <meta name="description" content="Access downloadable reports, marine research articles, educational guides, and frequently asked questions on ocean protection.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">STACKLY</div>
+  </div>
+
+  <!-- Bubble Background -->
+  <div id="bubble-container"></div>
+
+  <!-- NAVBAR -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="./index.html" class="logo">
+        <img src="./assets/webp/logo.webp" alt="Marine Portal" style="height: 40px; width: auto;">
+      </a>
+      <nav class="nav-menu-wrapper">
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Home</a></li>
+          <li><a href="./marine-life.html" class="nav-link">Marine Life</a></li>
+          <li><a href="./conservation-projects.html" class="nav-link">Projects</a></li>
+          <li><a href="./get-involved.html" class="nav-link">Get Involved</a></li>
+          <li><a href="./resources.html" class="nav-link">Resources</a></li>
+          <li><a href="./contact.html" class="nav-link">Contact</a></li>
+          <!-- Auth Dynamic Item -->
+          <li id="navAuthItem"><a href="./login.html" class="btn nav-btn">Login</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Toggle Navigation Menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- SUBPAGE HERO BANNER -->
+  <section class="subpage-hero">
+    <div class="subpage-hero-bg" style="background-image: url('./assets/webp/coral.webp');"></div>
+    <div class="subpage-hero-overlay"></div>
+    <div class="subpage-hero-content container flex-center" style="flex-direction: column;">
+      <h1 class="subpage-hero-title reveal-up active"><span class="float-text">Knowledge Resources</span></h1>
+      <p class="subpage-hero-desc reveal-up active" style="transition-delay: 0.15s;">
+        Access peer-reviewed research papers, marine survival handbooks, informative videos, and answers to our most common questions.
+      </p>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll Down</span>
+      <div class="scroll-indicator-mouse">
+        <div class="scroll-indicator-wheel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave Divider -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,57.05,18.3,87.43,26.37c76.7,20.32,154,32.7,233.96,30.07Z"></path>
+    </svg>
+  </div>
+
+  <!-- SECTION 2: RESEARCH ARTICLES -->
+  <section class="section-padding">
+    <div class="container">
+      <h2 class="section-title reveal-up">Research Studies</h2>
+      <p class="section-subtitle reveal-up">Scientific publications authored by our resident oceanographers and partner marine biology institutes.</p>
+      
+      <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:24px;" class="news-grid">
+        <!-- Article 1 -->
+        <article class="news-card glass reveal-up">
+          <div class="news-card-img" style="background-image: url('./assets/webp/news-2.webp');"></div>
+          <div class="news-card-content">
+            <div class="news-meta">
+              <span>PDF REPORT</span>
+              <span>•</span>
+              <span>12 PAGES</span>
+            </div>
+            <h3 class="news-title">Impact of Rising Sea Surface Temperatures on Coral Spawning Patterns</h3>
+            <p class="news-desc">An empirical study documenting spawning delays and fragment mortality rates in Hawaii nursery zones.</p>
+            <a href="./404.html" class="news-link">Download Paper <i data-lucide="download" style="width: 14px; height: 14px;"></i></a>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="news-card glass reveal-up" style="transition-delay: 0.1s;">
+          <div class="news-card-img" style="background-image: url('./assets/webp/news-3.webp');"></div>
+          <div class="news-card-content">
+            <div class="news-meta">
+              <span>RESEARCH DATA</span>
+              <span>•</span>
+              <span>34 PAGES</span>
+            </div>
+            <h3 class="news-title">Microplastics Bioaccumulation in Pelagic Fisheries Pathways</h3>
+            <p class="news-desc">Tracing plastic fragment densities in selective commercial catches to evaluate toxic bio-magnification cascades.</p>
+            <a href="./404.html" class="news-link">Download Paper <i data-lucide="download" style="width: 14px; height: 14px;"></i></a>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="news-card glass reveal-up" style="transition-delay: 0.2s;">
+          <div class="news-card-img" style="background-image: url('./assets/webp/news-1.webp');"></div>
+          <div class="news-card-content">
+            <div class="news-meta">
+              <span>POLICY BRIEF</span>
+              <span>•</span>
+              <span>8 PAGES</span>
+            </div>
+            <h3 class="news-title">Efficacy of High Seas Patrol Zones in Reducing Illegal Bycatch</h3>
+            <p class="news-desc">Analyzing 3 years of satellite patrol data to calculate bycatch reductions inside Marine Protected Areas.</p>
+            <a href="./404.html" class="news-link">Download Paper <i data-lucide="download" style="width: 14px; height: 14px;"></i></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: MARINE CONSERVATION GUIDES & REPORTS -->
+  <section class="section-padding" style="background: rgba(3, 4, 94, 0.15);">
+    <div class="container">
+      <h2 class="section-title reveal-up">Conservation Guides & Reports</h2>
+      <p class="section-subtitle reveal-up">Learn how to make a difference in your daily habits or read our audited operational sheets.</p>
+      
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:24px;">
+        <!-- Guide 1 -->
+        <div class="glass" style="padding:30px; border-radius:var(--border-radius); display:flex; flex-direction:column; gap:12px;">
+          <h4 style="font-family:var(--font-heading); font-size:1.25rem; font-weight:700; color:var(--white);">Zero-Plastic Living Guide</h4>
+          <p style="color:var(--text-muted); font-size:0.9rem; flex-grow:1;">Practical rules for individuals, families, and offices to completely eliminate single-use plastic dependencies.</p>
+          <a href="./404.html" class="news-link" style="font-size:0.85rem;">Download PDF (3.2MB) <i data-lucide="download" style="width:14px; height:14px;"></i></a>
+        </div>
+
+        <!-- Guide 2 -->
+        <div class="glass" style="padding:30px; border-radius:var(--border-radius); display:flex; flex-direction:column; gap:12px;">
+          <h4 style="font-family:var(--font-heading); font-size:1.25rem; font-weight:700; color:var(--white);">Sustainable Seafood Guide</h4>
+          <p style="color:var(--text-muted); font-size:0.9rem; flex-grow:1;">Wallet guide identifying sustainable species and highlighting catches to avoid due to destructive netting habits.</p>
+          <a href="./404.html" class="news-link" style="font-size:0.85rem;">Download PDF (1.8MB) <i data-lucide="download" style="width:14px; height:14px;"></i></a>
+        </div>
+
+        <!-- Guide 3 -->
+        <div class="glass" style="padding:30px; border-radius:var(--border-radius); display:flex; flex-direction:column; gap:12px;">
+          <h4 style="font-family:var(--font-heading); font-size:1.25rem; font-weight:700; color:var(--white);">Annual Impact Report 2025</h4>
+          <p style="color:var(--text-muted); font-size:0.9rem; flex-grow:1;">Audited financial logs, telemetry charts, volunteer hours, and project milestones achieved during the last fiscal cycle.</p>
+          <a href="./404.html" class="news-link" style="font-size:0.85rem;">Download PDF (5.6MB) <i data-lucide="download" style="width:14px; height:14px;"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: EDUCATIONAL VIDEOS -->
+  <section class="section-padding">
+    <div class="container">
+      <h2 class="section-title reveal-up">Educational Videos</h2>
+      <p class="section-subtitle reveal-up">Watch documentations of our field expeditions, clinics operations, and marine setups.</p>
+      
+      <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:30px;" class="news-grid">
+        <!-- Video 1 -->
+        <div class="glass" style="overflow:hidden; border-radius:var(--border-radius);">
+          <div style="height:250px; background-image:url('./assets/webp/coral.webp'); background-size:cover; background-position:center; position:relative;" class="flex-center">
+            <a href="./404.html" style="width:65px; height:65px; border-radius:50%; background:var(--accent); color:var(--white);" class="flex-center">
+              <i data-lucide="play" style="width:24px; height:24px; fill:var(--white); margin-left:3px;"></i>
+            </a>
+          </div>
+          <div style="padding:25px;">
+            <h4 style="font-family:var(--font-heading); font-size:1.25rem; font-weight:700; color:var(--white); margin-bottom:8px;">Secrets of the Coral Nursery</h4>
+            <p style="color:var(--text-muted); font-size:0.9rem;">Go behind the scenes at our land clinic to trace how staghorn micro-fragments are spawned and monitored.</p>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="glass" style="overflow:hidden; border-radius:var(--border-radius);">
+          <div style="height:250px; background-image:url('./assets/webp/about-mission.webp'); background-size:cover; background-position:center; position:relative;" class="flex-center">
+            <a href="./404.html" style="width:65px; height:65px; border-radius:50%; background:var(--accent); color:var(--white);" class="flex-center">
+              <i data-lucide="play" style="width:24px; height:24px; fill:var(--white); margin-left:3px;"></i>
+            </a>
+          </div>
+          <div style="padding:25px;">
+            <h4 style="font-family:var(--font-heading); font-size:1.25rem; font-weight:700; color:var(--white); margin-bottom:8px;">Ocean Interceptor: estuarine Barriers</h4>
+            <p style="color:var(--text-muted); font-size:0.9rem;">Drone footage and animations explaining how our river plastic fences intercept floating debris before it reaches the sea.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: FAQs (ACCORDION FAQs) -->
+  <section class="section-padding" style="background: rgba(3, 4, 94, 0.15); padding-bottom: 120px;">
+    <div class="container">
+      <h2 class="section-title reveal-up">Frequently Asked Questions</h2>
+      <p class="section-subtitle reveal-up">Find quick answers to common questions about our programs, donations, and volunteer logistics.</p>
+      
+      <div class="faq-container reveal-zoom-in">
+        <!-- FAQ 1 -->
+        <div class="faq-item glass">
+          <div class="faq-header">
+            <span>How are donations utilized?</span>
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </div>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              85% of our funding directly goes to active ocean restoration campaigns, clinics operations, patrol boat fuels, and sensor deployment. The remaining 15% covers administrative services, staff, and website upkeep.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item glass">
+          <div class="faq-header">
+            <span>Can I volunteer without marine biology experience?</span>
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </div>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              Yes, absolutely! Our beach plastic cleanups, sorting sessions, and local webinars require no scientific background. We provide all necessary on-site safety guides and instructions when you arrive.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item glass">
+          <div class="faq-header">
+            <span>What is a Marine Protected Area (MPA)?</span>
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </div>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              An MPA is an ocean zone designated by governments where human activities, particularly commercial transit, waste disposal, oil drilling, and commercial fishing are legally restricted to allow ecosystem recovery.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item glass">
+          <div class="faq-header">
+            <span>How does satellite migration tracking work?</span>
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </div>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              We tag animals using non-invasive suction-cup transmitters. When the animal breaks the ocean surface, the antenna signals orbiting weather satellites, transmitting location coordinates, dive depths, and water temperatures.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div>
+          <div class="footer-logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Marine Portal</span>
+          </div>
+          <p class="footer-about">
+            Protecting our marine habitats, restoring coral reefs, recovering ecosystems, and working towards sustainable fisheries worldwide.
+          </p>
+          <div class="footer-socials">
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/facebook.webp" alt="Facebook" style="width: 20px; height: 20px; display: block;"></a>
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/instagram.webp" alt="Instagram" style="width: 20px; height: 20px; display: block;"></a>
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/twitter.webp" alt="Twitter" style="width: 20px; height: 20px; display: block;"></a>
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/linkedin.webp" alt="LinkedIn" style="width: 20px; height: 20px; display: block;"></a>
+          </div>
+        </div>
+        <!-- Col 2 -->
+        <div>
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="./index.html" class="footer-link">Home</a></li>
+            <li><a href="./marine-life.html" class="footer-link">Marine Life</a></li>
+            <li><a href="./conservation-projects.html" class="footer-link">Projects</a></li>
+            <li><a href="./get-involved.html" class="footer-link">Get Involved</a></li>
+          </ul>
+        </div>
+        <!-- Col 3 -->
+        <div>
+          <h3 class="footer-title">Resources</h3>
+          <ul class="footer-links">
+            <li><a href="./resources.html" class="footer-link">Research Guides</a></li>
+            <li><a href="./resources.html" class="footer-link">FAQs</a></li>
+            <li><a href="./contact.html" class="footer-link">Contact Support</a></li>
+            <li><a href="./login.html" class="footer-link">Member Portal</a></li>
+          </ul>
+        </div>
+        <!-- Col 4 -->
+        <div class="footer-newsletter">
+          <h3 class="footer-title">Newsletter</h3>
+          <p>Subscribe to receive clean sea alerts and campaign notifications.</p>
+          <form class="footer-form">
+            <input type="email" class="footer-input" placeholder="Your Email" required>
+            <button type="submit" class="footer-submit" aria-label="Subscribe"><i data-lucide="send" style="width:16px; height:16px;"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Marine Conservation Organization. All rights reserved.</p>
+        <div style="display:flex; gap: 20px;">
+          <a href="./404.html">Privacy Policy</a>
+          <a href="./404.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <div class="back-to-top" id="backToTop">
+    <i data-lucide="arrow-up" style="width: 20px; height: 20px;"></i>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Our Conservation Team | Marine Conservation</title>
+  <meta name="description" content="Get in touch with our marine conservation team, apply for internships, or submit media requests.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">STACKLY</div>
+  </div>
+
+  <!-- Bubble Background -->
+  <div id="bubble-container"></div>
+
+  <!-- NAVBAR -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="./index.html" class="logo">
+        <img src="./assets/webp/logo.webp" alt="Marine Portal" style="height: 40px; width: auto;">
+      </a>
+      <nav class="nav-menu-wrapper">
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Home</a></li>
+          <li><a href="./marine-life.html" class="nav-link">Marine Life</a></li>
+          <li><a href="./conservation-projects.html" class="nav-link">Projects</a></li>
+          <li><a href="./get-involved.html" class="nav-link">Get Involved</a></li>
+          <li><a href="./resources.html" class="nav-link">Resources</a></li>
+          <li><a href="./contact.html" class="nav-link">Contact</a></li>
+          <!-- Auth Dynamic Item -->
+          <li id="navAuthItem"><a href="./login.html" class="btn nav-btn">Login</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Toggle Navigation Menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- SUBPAGE HERO BANNER -->
+  <section class="subpage-hero">
+    <div class="subpage-hero-bg" style="background-image: url('./assets/webp/news-1.webp');"></div>
+    <div class="subpage-hero-overlay"></div>
+    <div class="subpage-hero-content container flex-center" style="flex-direction: column;">
+      <h1 class="subpage-hero-title reveal-up active"><span class="float-text">Contact Our Team</span></h1>
+      <p class="subpage-hero-desc reveal-up active" style="transition-delay: 0.15s;">
+        Have questions about volunteering, partnership alliances, or wish to report stranded wildlife? Reach out using the form below.
+      </p>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll Down</span>
+      <div class="scroll-indicator-mouse">
+        <div class="scroll-indicator-wheel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave Divider -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,57.05,18.3,87.43,26.37c76.7,20.32,154,32.7,233.96,30.07Z"></path>
+    </svg>
+  </div>
+
+  <!-- SECTION 2 & 3: CONTACT FORM & INFO -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Info Column -->
+        <div class="contact-info-panel glass reveal-left">
+          <h2 style="font-family:var(--font-heading); font-size:1.85rem; font-weight:800; color:var(--white); margin-bottom:10px;">Reach Out Directly</h2>
+          <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:10px;">Feel free to connect through direct channels or visit our regional offices.</p>
+
+          <!-- Phone -->
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i data-lucide="phone"></i></div>
+            <div class="contact-info-text">
+              <h4>Phone Line</h4>
+              <p>+1 (800) 555-BLUE (2583)</p>
+              <p style="font-size:0.8rem; color:var(--text-muted);">Mon - Fri, 9 AM - 5 PM GMT</p>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i data-lucide="mail"></i></div>
+            <div class="contact-info-text">
+              <h4>Email Communications</h4>
+              <p>info@marine-portal.org</p>
+              <p style="font-size:0.8rem; color:var(--text-muted);">General & press inquiries</p>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i data-lucide="map-pin"></i></div>
+            <div class="contact-info-text">
+              <h4>Central Operations HQ</h4>
+              <p>42 Ocean Breeze Way, Suite 100</p>
+              <p>London, WC2N 5DN, United Kingdom</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Column -->
+        <div class="contact-form-panel glass reveal-right">
+          <h3 style="font-family:var(--font-heading); font-size:1.5rem; font-weight:700; color:var(--white); margin-bottom:25px;">Send a Message</h3>
+          <form style="display:flex; flex-direction:column; gap:15px;">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-control" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-control" placeholder="john@example.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Subject</label>
+              <input type="text" class="form-control" placeholder="Volunteer, Donation, Inquiry" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message Content</label>
+              <textarea class="form-control" placeholder="Write your message here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit-btn" style="margin-top:10px;">Send Message <i data-lucide="send" style="width:16px; height:16px;"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: OFFICE LOCATIONS -->
+  <section class="section-padding" style="background: rgba(3, 4, 94, 0.15); padding-bottom: 120px;">
+    <div class="container">
+      <h2 class="section-title reveal-up">Regional Field Offices</h2>
+      <p class="section-subtitle reveal-up">Our local hubs coordinate reef plantings, patrols, and scientific investigations directly on the coast.</p>
+      
+      <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:24px;" class="news-grid">
+        <!-- Office 1 -->
+        <div class="glass" style="padding:30px; border-radius:var(--border-radius); text-align:center;">
+          <h4 style="font-family:var(--font-heading); font-size:1.25rem; font-weight:700; color:var(--white); margin-bottom:10px;">Pacific Reef Center</h4>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:15px;">Queensland, Australia</p>
+          <p style="font-size:0.85rem; color:var(--text-muted);">Oversees micro-fragmentation tanks, artificial grid planting, and bleaching alarms across the Coral Sea.</p>
+        </div>
+
+        <!-- Office 2 -->
+        <div class="glass" style="padding:30px; border-radius:var(--border-radius); text-align:center;">
+          <h4 style="font-family:var(--font-heading); font-size:1.25rem; font-weight:700; color:var(--white); margin-bottom:10px;">Atlantic Patrol Station</h4>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:15px;">Cornwall, United Kingdom</p>
+          <p style="font-size:0.85rem; color:var(--text-muted);">Coordinates vessel night shift runs, estuarine plastic interceptors, and beach cleanup volunteers.</p>
+        </div>
+
+        <!-- Office 3 -->
+        <div class="glass" style="padding:30px; border-radius:var(--border-radius); text-align:center;">
+          <h4 style="font-family:var(--font-heading); font-size:1.25rem; font-weight:700; color:var(--white); margin-bottom:10px;">Marine Mammals Clinic</h4>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:15px;">Maui, Hawaii, USA</p>
+          <p style="font-size:0.85rem; color:var(--text-muted);">Coordinates dolphin entanglement rescue patrols, whale satellite tracking grids, and veterinary facilities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div>
+          <div class="footer-logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Marine Portal</span>
+          </div>
+          <p class="footer-about">
+            Protecting our marine habitats, restoring coral reefs, recovering ecosystems, and working towards sustainable fisheries worldwide.
+          </p>
+          <div class="footer-socials">
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/facebook.webp" alt="Facebook" style="width: 20px; height: 20px; display: block;"></a>
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/instagram.webp" alt="Instagram" style="width: 20px; height: 20px; display: block;"></a>
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/twitter.webp" alt="Twitter" style="width: 20px; height: 20px; display: block;"></a>
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/linkedin.webp" alt="LinkedIn" style="width: 20px; height: 20px; display: block;"></a>
+          </div>
+        </div>
+        <!-- Col 2 -->
+        <div>
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="./index.html" class="footer-link">Home</a></li>
+            <li><a href="./marine-life.html" class="footer-link">Marine Life</a></li>
+            <li><a href="./conservation-projects.html" class="footer-link">Projects</a></li>
+            <li><a href="./get-involved.html" class="footer-link">Get Involved</a></li>
+          </ul>
+        </div>
+        <!-- Col 3 -->
+        <div>
+          <h3 class="footer-title">Resources</h3>
+          <ul class="footer-links">
+            <li><a href="./resources.html" class="footer-link">Research Guides</a></li>
+            <li><a href="./resources.html" class="footer-link">FAQs</a></li>
+            <li><a href="./contact.html" class="footer-link">Contact Support</a></li>
+            <li><a href="./login.html" class="footer-link">Member Portal</a></li>
+          </ul>
+        </div>
+        <!-- Col 4 -->
+        <div class="footer-newsletter">
+          <h3 class="footer-title">Newsletter</h3>
+          <p>Subscribe to receive clean sea alerts and campaign notifications.</p>
+          <form class="footer-form">
+            <input type="email" class="footer-input" placeholder="Your Email" required>
+            <button type="submit" class="footer-submit" aria-label="Subscribe"><i data-lucide="send" style="width:16px; height:16px;"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Marine Conservation Organization. All rights reserved.</p>
+        <div style="display:flex; gap: 20px;">
+          <a href="./404.html">Privacy Policy</a>
+          <a href="./404.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <div class="back-to-top" id="backToTop">
+    <i data-lucide="arrow-up" style="width: 20px; height: 20px;"></i>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./js/script.js"></script>
+</body>
+</html>

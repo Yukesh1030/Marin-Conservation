@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protect Our Oceans, Preserve Our Future | Marine Conservation</title>
+  <meta name="description" content="Join our marine conservation mission to protect oceans, restore coral reefs, rescue wildlife, and clean oceans from plastic pollution.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">STACKLY</div>
+  </div>
+
+  <!-- Bubble Background -->
+  <div id="bubble-container"></div>
+
+  <!-- ==========================================================================
+     NAVBAR
+     ========================================================================== */ -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="./index.html" class="logo">
+        <img src="./assets/webp/logo.webp" alt="Marine Portal" style="height: 40px; width: auto;">
+      </a>
+      <nav class="nav-menu-wrapper">
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Home</a></li>
+          <li><a href="./marine-life.html" class="nav-link">Marine Life</a></li>
+          <li><a href="./conservation-projects.html" class="nav-link">Projects</a></li>
+          <li><a href="./get-involved.html" class="nav-link">Get Involved</a></li>
+          <li><a href="./resources.html" class="nav-link">Resources</a></li>
+          <li><a href="./contact.html" class="nav-link">Contact</a></li>
+          <!-- Auth Dynamic Item -->
+          <li id="navAuthItem"><a href="./login.html" class="btn nav-btn">Login</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Toggle Navigation Menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+     SECTION 1: HERO
+     ========================================================================== */ -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image: url('./assets/webp/hero-bg.webp');"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content flex-center" style="flex-direction: column;">
+      <h1 class="hero-title reveal-up active"><span class="float-text">Protect Our Oceans,<br>Preserve Our Future</span></h1>
+      <p class="hero-desc reveal-up active" style="transition-delay: 0.15s;">
+        The ocean covers 70% of our planet, produces half the oxygen we breathe, and regulates our climate. Yet, it faces critical threats. Explore our campaigns to protect vital marine ecosystems.
+      </p>
+      <div class="hero-actions reveal-up active" style="transition-delay: 0.3s;">
+        <a href="./conservation-projects.html" class="btn btn-primary">Explore Projects <i data-lucide="compass" style="width: 18px; height: 18px;"></i></a>
+        <a href="./get-involved.html" class="btn btn-secondary">Donate Now <i data-lucide="heart" style="width: 18px; height: 18px; fill: currentColor;"></i></a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll Down</span>
+      <div class="scroll-indicator-mouse">
+        <div class="scroll-indicator-wheel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave Divider -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,57.05,18.3,87.43,26.37c76.7,20.32,154,32.7,233.96,30.07Z"></path>
+    </svg>
+  </div>
+
+  <!-- ==========================================================================
+     SECTION 2: OCEAN IMPACT STATISTICS
+     ========================================================================== */ -->
+  <section class="stats section-padding">
+    <div class="container">
+      <div class="stats-grid">
+        <!-- Stat 1 -->
+        <div class="stat-card glass reveal-up">
+          <div class="stat-icon"><i data-lucide="trash-2"></i></div>
+          <div class="stat-number" data-target="25000" data-suffix="+ Tons">0</div>
+          <div class="stat-label">Plastic Removed</div>
+        </div>
+        <!-- Stat 2 -->
+        <div class="stat-card glass reveal-up" style="transition-delay: 0.1s;">
+          <div class="stat-icon"><i data-lucide="shield"></i></div>
+          <div class="stat-number" data-target="1500" data-suffix="+">0</div>
+          <div class="stat-label">Species Protected</div>
+        </div>
+        <!-- Stat 3 -->
+        <div class="stat-card glass reveal-up" style="transition-delay: 0.2s;">
+          <div class="stat-icon"><i data-lucide="activity"></i></div>
+          <div class="stat-number" data-target="45000" data-suffix="+ sq m">0</div>
+          <div class="stat-label">Coral Reefs Restored</div>
+        </div>
+        <!-- Stat 4 -->
+        <div class="stat-card glass reveal-up" style="transition-delay: 0.3s;">
+          <div class="stat-icon"><i data-lucide="users"></i></div>
+          <div class="stat-number" data-target="18500" data-suffix="+">0</div>
+          <div class="stat-label">Volunteers Active</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     SECTION 3: FEATURED MARINE LIFE
+     ========================================================================== */ -->
+  <section class="section-padding">
+    <div class="container">
+      <h2 class="section-title reveal-up">Featured Marine Life</h2>
+      <p class="section-subtitle reveal-up">Meet some of the spectacular species we are working tirelessly to protect and keep safe from extinction.</p>
+      
+      <div class="marine-life-grid">
+        <!-- Species 1 -->
+        <div class="species-card glass reveal-up">
+          <div class="species-card-img" style="background-image: url('./assets/webp/turtle.webp');"></div>
+          <div class="species-card-overlay">
+            <h3 class="species-card-title">Sea Turtle</h3>
+            <p class="species-card-desc">Ancient navigators facing severe threats from ocean plastic pollution and coastal nesting beach degradation.</p>
+          </div>
+        </div>
+        <!-- Species 2 -->
+        <div class="species-card glass reveal-up" style="transition-delay: 0.1s;">
+          <div class="species-card-img" style="background-image: url('./assets/webp/whale.webp');"></div>
+          <div class="species-card-overlay">
+            <h3 class="species-card-title">Blue Whale</h3>
+            <p class="species-card-desc">The largest animal ever to exist, slowly recovering in vast protected ocean sanctuaries.</p>
+          </div>
+        </div>
+        <!-- Species 3 -->
+        <div class="species-card glass reveal-up" style="transition-delay: 0.2s;">
+          <div class="species-card-img" style="background-image: url('./assets/webp/dolphin.webp');"></div>
+          <div class="species-card-overlay">
+            <h3 class="species-card-title">Dolphin</h3>
+            <p class="species-card-desc">Highly intelligent social creatures protected from industrial net entanglement and ocean noise.</p>
+          </div>
+        </div>
+        <!-- Species 4 -->
+        <div class="species-card glass reveal-up" style="transition-delay: 0.3s;">
+          <div class="species-card-img" style="background-image: url('./assets/webp/coral.webp');"></div>
+          <div class="species-card-overlay">
+            <h3 class="species-card-title">Coral Reefs</h3>
+            <p class="species-card-desc">Diverse marine nurseries sheltering 25% of ocean species, being actively restored against bleaching.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     SECTION 4: OUR MISSION
+     ========================================================================== */ -->
+  <section class="section-padding" style="background: rgba(3, 4, 94, 0.15);">
+    <div class="container">
+      <div class="mission-split">
+        <div class="mission-img-wrapper reveal-left">
+          <img src="./assets/webp/about-mission.webp" alt="Underwater Ocean Sunlight" class="mission-img" loading="lazy">
+        </div>
+        <div class="mission-content reveal-right">
+          <h2 class="section-title" style="text-align: left; margin-bottom: 25px;">Our Mission</h2>
+          <p>
+            We design and deliver high-impact conservation projects that restore ocean habitats, protect vulnerable marine wildlife, and secure sustainable fisheries. Working alongside local communities, scientists, and governments, we target key areas that make a significant difference.
+          </p>
+          <ul class="mission-bullets">
+            <li class="mission-bullet-item">
+              <i data-lucide="check-circle-2"></i>
+              <span>100% science-backed ecological restoration frameworks.</span>
+            </li>
+            <li class="mission-bullet-item">
+              <i data-lucide="check-circle-2"></i>
+              <span>Empowering coastal communities for sustainable livelihoods.</span>
+            </li>
+            <li class="mission-bullet-item">
+              <i data-lucide="check-circle-2"></i>
+              <span>Lobbying for global policies to protect high seas zones.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     SECTION 5: CONSERVATION PROGRAMS
+     ========================================================================== */ -->
+  <section class="section-padding">
+    <div class="container">
+      <h2 class="section-title reveal-up">Conservation Programs</h2>
+      <p class="section-subtitle reveal-up">Through our strategic initiatives, we address the root causes of marine degradation and restore hope.</p>
+      
+      <div class="programs-grid">
+        <!-- Program 1 -->
+        <div class="program-card glass reveal-up">
+          <div class="program-card-img" style="background-image: url('./assets/webp/program-restoration.webp');"></div>
+          <div class="program-card-content">
+            <h3 class="program-card-title">Coral restoration</h3>
+            <p class="program-card-desc">Growing climate-resilient corals in land nurseries and planting them to restore degraded structures.</p>
+            <a href="./conservation-projects.html" class="program-card-link">Learn More <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i></a>
+          </div>
+        </div>
+        <!-- Program 2 -->
+        <div class="program-card glass reveal-up" style="transition-delay: 0.1s;">
+          <div class="program-card-img" style="background-image: url('./assets/webp/program-cleanup.webp');"></div>
+          <div class="program-card-content">
+            <h3 class="program-card-title">Ocean Cleanup</h3>
+            <p class="program-card-desc">Deploying ocean barriers and organizing beach cleanup events to trap and recycle plastics.</p>
+            <a href="./conservation-projects.html" class="program-card-link">Learn More <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i></a>
+          </div>
+        </div>
+        <!-- Program 3 -->
+        <div class="program-card glass reveal-up" style="transition-delay: 0.2s;">
+          <div class="program-card-img" style="background-image: url('./assets/webp/program-rescue.webp');"></div>
+          <div class="program-card-content">
+            <h3 class="program-card-title">Wildlife Rescue</h3>
+            <p class="program-card-desc">Operating marine veterinary units to rescue and rehabilitate injured or stranded sea mammals.</p>
+            <a href="./conservation-projects.html" class="program-card-link">Learn More <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i></a>
+          </div>
+        </div>
+        <!-- Program 4 -->
+        <div class="program-card glass reveal-up" style="transition-delay: 0.3s;">
+          <div class="program-card-img" style="background-image: url('./assets/webp/program-fisheries.webp');"></div>
+          <div class="program-card-content">
+            <h3 class="program-card-title">Sustainable Fisheries</h3>
+            <p class="program-card-desc">Advocating for quota restrictions and selective gear to maintain balanced aquatic food chains.</p>
+            <a href="./conservation-projects.html" class="program-card-link">Learn More <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     SECTION 6: SUCCESS STORIES (TIMELINE)
+     ========================================================================== */ -->
+  <section class="section-padding" style="background: rgba(3, 4, 94, 0.15); position: relative;">
+    <div class="container">
+      <h2 class="section-title reveal-up">Success Stories</h2>
+      <p class="section-subtitle reveal-up">Look back at the key milestones we have achieved in our mission to repair and protect the blue planet.</p>
+      
+      <div class="timeline">
+        <!-- Milestone 1 -->
+        <div class="timeline-item timeline-item-left reveal-left">
+          <div class="timeline-badge"></div>
+          <div class="timeline-panel glass">
+            <div class="timeline-year">2024</div>
+            <h3 class="timeline-title">15,000 Hectares Protected</h3>
+            <p class="timeline-desc">Secured government policies declaring deep-sea canyons off the Atlantic coast as a no-take marine sanctuary.</p>
+            <div class="timeline-img" style="background-image: url('./assets/webp/success-timeline.webp');"></div>
+          </div>
+        </div>
+        <!-- Milestone 2 -->
+        <div class="timeline-item timeline-item-right reveal-right">
+          <div class="timeline-badge"></div>
+          <div class="timeline-panel glass">
+            <div class="timeline-year">2025</div>
+            <h3 class="timeline-title">Coral Nursery Expansion</h3>
+            <p class="timeline-desc">Successfully expanded our nursery facilities in Hawaii, transplanting 10,000 heat-resistant coral fragments.</p>
+          </div>
+        </div>
+        <!-- Milestone 3 -->
+        <div class="timeline-item timeline-item-left reveal-left">
+          <div class="timeline-badge"></div>
+          <div class="timeline-panel glass">
+            <div class="timeline-year">2026</div>
+            <h3 class="timeline-title">Global Ocean Pact</h3>
+            <p class="timeline-desc">Lobbied and drafted key clauses of the binding high-seas plastic restriction treaty signed by 80 coastal states.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     SECTION 7: LATEST NEWS
+     ========================================================================== */ -->
+  <section class="section-padding">
+    <div class="container">
+      <h2 class="section-title reveal-up">Latest News</h2>
+      <p class="section-subtitle reveal-up">Stay informed with updates from our conservation team and field oceanographers.</p>
+      
+      <div class="news-grid">
+        <!-- Article 1 -->
+        <article class="news-card glass reveal-up">
+          <div class="news-card-img" style="background-image: url('./assets/webp/news-1.webp');"></div>
+          <div class="news-card-content">
+            <div class="news-meta">
+              <span><i data-lucide="calendar" style="width:12px; height:12px; vertical-align: -1px;"></i> June 18, 2026</span>
+              <span>•</span>
+              <span>CONSERVATION</span>
+            </div>
+            <h3 class="news-title">New Marine Protected Area Declared in Coral Triangle</h3>
+            <p class="news-desc">Scientific surveys validate outstanding biodiversity, triggering crucial zoning regulations against industrial fishing.</p>
+            <a href="./resources.html" class="news-link">Read Story <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i></a>
+          </div>
+        </article>
+        <!-- Article 2 -->
+        <article class="news-card glass reveal-up" style="transition-delay: 0.1s;">
+          <div class="news-card-img" style="background-image: url('./assets/webp/news-2.webp');"></div>
+          <div class="news-card-content">
+            <div class="news-meta">
+              <span><i data-lucide="calendar" style="width:12px; height:12px; vertical-align: -1px;"></i> June 12, 2026</span>
+              <span>•</span>
+              <span>RESEARCH</span>
+            </div>
+            <h3 class="news-title">Scientific Breakthrough: Heat-Resilient Corals Spawned</h3>
+            <p class="news-desc">Genomic selections allow nursery researchers to breed species that withstand higher water temperatures.</p>
+            <a href="./resources.html" class="news-link">Read Story <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i></a>
+          </div>
+        </article>
+        <!-- Article 3 -->
+        <article class="news-card glass reveal-up" style="transition-delay: 0.2s;">
+          <div class="news-card-img" style="background-image: url('./assets/webp/news-3.webp');"></div>
+          <div class="news-card-content">
+            <div class="news-meta">
+              <span><i data-lucide="calendar" style="width:12px; height:12px; vertical-align: -1px;"></i> June 05, 2026</span>
+              <span>•</span>
+              <span>POLICY</span>
+            </div>
+            <h3 class="news-title">Global Ocean Alliance Commits $50M to Clean High Seas</h3>
+            <p class="news-desc">Grants funded by international NGOs will finance deep-sea trash interceptors and drift net salvage campaigns.</p>
+            <a href="./resources.html" class="news-link">Read Story <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     SECTION 8: CALL TO ACTION BANNER
+     ========================================================================== */ -->
+  <section class="section-padding" style="padding-bottom: 120px;">
+    <div class="container">
+      <div class="cta-banner glass reveal-zoom-in">
+        <div class="cta-banner-content">
+          <h2 class="cta-title">The Tide is Turning.<br>Will You Join Us?</h2>
+          <p class="cta-desc">
+            Saving the oceans requires collective momentum. Whether you volunteer in cleanups, donate to restoration nurseries, or spread the word—your choice shapes the blue planet.
+          </p>
+          <div class="cta-buttons">
+            <a href="./get-involved.html" class="btn btn-primary">Volunteer <i data-lucide="users" style="width: 16px; height: 16px;"></i></a>
+            <a href="./get-involved.html" class="btn btn-secondary" style="background: rgba(42, 157, 143, 0.2); border-color: var(--sea-green); color: var(--white);">Donate Now <i data-lucide="heart" style="width: 16px; height: 16px;"></i></a>
+            <a href="./contact.html" class="btn btn-secondary">Contact Us <i data-lucide="mail" style="width: 16px; height: 16px;"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     FOOTER
+     ========================================================================== */ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div>
+          <div class="footer-logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Marine Portal</span>
+          </div>
+          <p class="footer-about">
+            Protecting our marine habitats, restoring coral reefs, recovering ecosystems, and working towards sustainable fisheries worldwide.
+          </p>
+          <div class="footer-socials">
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/facebook.webp" alt="Facebook" style="width: 20px; height: 20px; display: block;"></a>
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/instagram.webp" alt="Instagram" style="width: 20px; height: 20px; display: block;"></a>
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/twitter.webp" alt="Twitter" style="width: 20px; height: 20px; display: block;"></a>
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/linkedin.webp" alt="LinkedIn" style="width: 20px; height: 20px; display: block;"></a>
+          </div>
+        </div>
+        <!-- Col 2 -->
+        <div>
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="./index.html" class="footer-link">Home</a></li>
+            <li><a href="./marine-life.html" class="footer-link">Marine Life</a></li>
+            <li><a href="./conservation-projects.html" class="footer-link">Projects</a></li>
+            <li><a href="./get-involved.html" class="footer-link">Get Involved</a></li>
+          </ul>
+        </div>
+        <!-- Col 3 -->
+        <div>
+          <h3 class="footer-title">Resources</h3>
+          <ul class="footer-links">
+            <li><a href="./resources.html" class="footer-link">Research Guides</a></li>
+            <li><a href="./resources.html" class="footer-link">FAQs</a></li>
+            <li><a href="./contact.html" class="footer-link">Contact Support</a></li>
+            <li><a href="./login.html" class="footer-link">Member Portal</a></li>
+          </ul>
+        </div>
+        <!-- Col 4 -->
+        <div class="footer-newsletter">
+          <h3 class="footer-title">Newsletter</h3>
+          <p>Subscribe to receive clean sea alerts and campaign notifications.</p>
+          <form class="footer-form">
+            <input type="email" class="footer-input" placeholder="Your Email" required>
+            <button type="submit" class="footer-submit" aria-label="Subscribe"><i data-lucide="send" style="width:16px; height:16px;"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Marine Conservation Organization. All rights reserved.</p>
+        <div style="display:flex; gap: 20px;">
+          <a href="./404.html">Privacy Policy</a>
+          <a href="./404.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <div class="back-to-top" id="backToTop">
+    <i data-lucide="arrow-up" style="width: 20px; height: 20px;"></i>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./js/script.js"></script>
+</body>
+</html>

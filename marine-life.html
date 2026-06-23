@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marine Species & Conservation efforts | Marine Conservation</title>
+  <meta name="description" content="Explore marine life, from mammals and corals to endangered species, and learn about our ongoing protection and tagging efforts.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">STACKLY</div>
+  </div>
+
+  <!-- Bubble Background -->
+  <div id="bubble-container"></div>
+
+  <!-- NAVBAR -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="./index.html" class="logo">
+        <img src="./assets/webp/logo.webp" alt="Marine Portal" style="height: 40px; width: auto;">
+      </a>
+      <nav class="nav-menu-wrapper">
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Home</a></li>
+          <li><a href="./marine-life.html" class="nav-link">Marine Life</a></li>
+          <li><a href="./conservation-projects.html" class="nav-link">Projects</a></li>
+          <li><a href="./get-involved.html" class="nav-link">Get Involved</a></li>
+          <li><a href="./resources.html" class="nav-link">Resources</a></li>
+          <li><a href="./contact.html" class="nav-link">Contact</a></li>
+          <!-- Auth Dynamic Item -->
+          <li id="navAuthItem"><a href="./login.html" class="btn nav-btn">Login</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Toggle Navigation Menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- SUBPAGE HERO BANNER -->
+  <section class="subpage-hero">
+    <div class="subpage-hero-bg" style="background-image: url('./assets/webp/dolphin.webp');"></div>
+    <div class="subpage-hero-overlay"></div>
+    <div class="subpage-hero-content container flex-center" style="flex-direction: column;">
+      <h1 class="subpage-hero-title reveal-up active"><span class="float-text">Marine Species Directory</span></h1>
+      <p class="subpage-hero-desc reveal-up active" style="transition-delay: 0.15s;">
+        Our oceans shelter over 230,000 documented species. Dive deep to learn about their biology, their ecosystem value, and the campaigns underway to secure their future.
+      </p>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll Down</span>
+      <div class="scroll-indicator-mouse">
+        <div class="scroll-indicator-wheel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave Divider -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,57.05,18.3,87.43,26.37c76.7,20.32,154,32.7,233.96,30.07Z"></path>
+    </svg>
+  </div>
+
+  <!-- SECTION 2: MARINE MAMMALS -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="mission-split">
+        <div class="mission-content reveal-left">
+          <h2 class="section-title" style="text-align: left; margin-bottom: 25px;">Marine Mammals</h2>
+          <p>
+            Whales, dolphins, seals, and otters represent the ocean's warm-blooded residents. These creatures hold high ecological importance, behaving as sentinel species that signal overall health of the food web.
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            Because they sit near the top of marine cascades, tracking their migration patterns, bioaccumulation rates, and population densities allows researchers to isolate oceanic stressors. Our teams actively monitor migration corridors, establishing temporary vessel speed limits to avoid collisions.
+          </p>
+        </div>
+        <div class="mission-img-wrapper reveal-right">
+          <img src="./assets/webp/dolphin.webp" alt="Dolphin under water" class="mission-img" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: CORAL ECOSYSTEMS -->
+  <section class="section-padding" style="background: rgba(3, 4, 94, 0.15);">
+    <div class="container">
+      <div class="mission-split">
+        <div class="mission-img-wrapper reveal-left">
+          <img src="./assets/webp/coral.webp" alt="Coral Reef Ecosystem" class="mission-img" loading="lazy">
+        </div>
+        <div class="mission-content reveal-right">
+          <h2 class="section-title" style="text-align: left; margin-bottom: 25px;">Coral Reef Ecosystems</h2>
+          <p>
+            Reefs are the rainforests of the sea. Occupying less than 0.1% of the ocean floor, they support more than 25% of all marine species, acting as shoreline protectors and nurseries.
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            Rising sea temperatures induce widespread coral bleaching, starving reef ecosystems of their primary energy source. Our scientists select heat-resistant coral fragments, nurture them in offshore tables, and restore damaged limestone skeletons to secure these vital coastal buffer structures.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: ENDANGERED SPECIES -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="mission-split">
+        <div class="mission-content reveal-left">
+          <h2 class="section-title" style="text-align: left; margin-bottom: 25px;">Endangered Species</h2>
+          <p>
+            From the vaquita porpoise to the hawksbill sea turtle, hundreds of unique marine creatures hover on the brink of extinction. Overfishing, selective harvesting, and floating plastics drive this steep decline.
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            We focus rescue resources on key priority corridors. By introducing turtle excluder devices (TEDs) to trawling networks and training artisanal fisherman on selective netting practices, we build real-world defenses for endangered populations.
+          </p>
+        </div>
+        <div class="mission-img-wrapper reveal-right">
+          <img src="./assets/webp/turtle.webp" alt="Sea turtle swimming in blue ocean" class="mission-img" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: GALLERY GRID (INTERACTIVE MODALS) -->
+  <section class="section-padding" style="background: rgba(3, 4, 94, 0.15);">
+    <div class="container">
+      <h2 class="section-title reveal-up">Marine Species Gallery</h2>
+      <p class="section-subtitle reveal-up">Click on any species below to view its specific threat report, habitat needs, and our conservation status.</p>
+      
+      <div class="gallery-grid">
+        <!-- Card 1 -->
+        <div class="gallery-card glass reveal-up" 
+             data-title="Hawksbill Sea Turtle" 
+             data-tag="Critically Endangered" 
+             data-desc="Hawksbill sea turtles are critically endangered due to coastal nesting beach loss, harvesting for tortoiseshell ornaments, climate change, and marine plastic consumption. They play an essential role in keeping coral reef ecosystems healthy by feeding on sponges.">
+          <div class="gallery-card-img" style="background-image: url('./assets/webp/turtle.webp');"></div>
+          <div class="gallery-card-overlay">
+            <h3 class="gallery-card-title">Hawksbill Sea Turtle</h3>
+            <span class="gallery-card-tag">Critically Endangered</span>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="gallery-card glass reveal-up" style="transition-delay: 0.1s;"
+             data-title="Blue Whale" 
+             data-tag="Endangered" 
+             data-desc="Blue whales are the largest animals to ever inhabit Earth. Although protected by international bans, their recovery is slowed by collisions with container ships, ocean noise pollution interfering with communication, and krill depletion from changing climate currents.">
+          <div class="gallery-card-img" style="background-image: url('./assets/webp/whale.webp');"></div>
+          <div class="gallery-card-overlay">
+            <h3 class="gallery-card-title">Blue Whale</h3>
+            <span class="gallery-card-tag">Endangered</span>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="gallery-card glass reveal-up" style="transition-delay: 0.2s;"
+             data-title="Spinner Dolphin" 
+             data-tag="Protected" 
+             data-desc="Spinner dolphins are famous for their acrobatic spins. They inhabit tropical and subtropical waters worldwide. Threats include drift net entanglement, marine debris ingestion, and toxic chemical accumulation in tissue.">
+          <div class="gallery-card-img" style="background-image: url('./assets/webp/dolphin.webp');"></div>
+          <div class="gallery-card-overlay">
+            <h3 class="gallery-card-title">Spinner Dolphin</h3>
+            <span class="gallery-card-tag">Protected</span>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="gallery-card glass reveal-up"
+             data-title="Staghorn Coral" 
+             data-tag="Critically Endangered" 
+             data-desc="Staghorn coral is a branching stony coral that forms dense thickets, providing crucial shelter for fish. They are severely threatened by ocean warming, bleaching, and white band disease. We actively grow and transplant them.">
+          <div class="gallery-card-img" style="background-image: url('./assets/webp/program-restoration.webp');"></div>
+          <div class="gallery-card-overlay">
+            <h3 class="gallery-card-title">Staghorn Coral</h3>
+            <span class="gallery-card-tag">Critically Endangered</span>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="gallery-card glass reveal-up" style="transition-delay: 0.1s;"
+             data-title="Whale Shark" 
+             data-tag="Endangered" 
+             data-desc="Whale sharks are gentle filter-feeding giants. They are highly vulnerable to plastic ingestion, vessel strikes in shipping lanes, and demand for fins, meat, and oil in unsustainable markets.">
+          <div class="gallery-card-img" style="background-image: url('./assets/webp/coral.webp');"></div>
+          <div class="gallery-card-overlay">
+            <h3 class="gallery-card-title">Whale Shark</h3>
+            <span class="gallery-card-tag">Endangered</span>
+          </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="gallery-card glass reveal-up" style="transition-delay: 0.2s;"
+             data-title="Reef Fish" 
+             data-tag="Vulnerable" 
+             data-desc="Reef fish include thousands of brightly colored species that maintain coral ecosystem health. They face habitat destruction, pollution, and over-harvesting for aquariums. Selective fishing zones protect their nurseries.">
+          <div class="gallery-card-img" style="background-image: url('./assets/webp/program-fisheries.webp');"></div>
+          <div class="gallery-card-overlay">
+            <h3 class="gallery-card-title">Reef Fish</h3>
+            <span class="gallery-card-tag">Vulnerable</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: CONSERVATION EFFORTS -->
+  <section class="section-padding" style="padding-bottom: 120px;">
+    <div class="container">
+      <h2 class="section-title reveal-up">Conservation Efforts</h2>
+      <p class="section-subtitle reveal-up">How we actively defend vulnerable species in the field.</p>
+      
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:24px;">
+        <div class="glass style-card" style="padding:40px; border-radius:var(--border-radius); text-align:center;">
+          <div class="stat-icon"><i data-lucide="shield-alert" style="width:40px; height:40px; stroke:var(--accent);"></i></div>
+          <h3 style="font-family:var(--font-heading); font-size:1.3rem; margin:15px 0 10px; color:var(--white);">Marine Reserves patrolling</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem;">Partnering with national coast guards to monitor protected areas and deter illegal trawlers.</p>
+        </div>
+
+        <div class="glass style-card" style="padding:40px; border-radius:var(--border-radius); text-align:center;">
+          <div class="stat-icon"><i data-lucide="satellite" style="width:40px; height:40px; stroke:var(--accent);"></i></div>
+          <h3 style="font-family:var(--font-heading); font-size:1.3rem; margin:15px 0 10px; color:var(--white);">Satellite migration Tracking</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem;">Tagging whales and turtles to map migration corridors, helping to optimize global shipping lanes.</p>
+        </div>
+
+        <div class="glass style-card" style="padding:40px; border-radius:var(--border-radius); text-align:center;">
+          <div class="stat-icon"><i data-lucide="thermometer-sun" style="width:40px; height:40px; stroke:var(--accent);"></i></div>
+          <h3 style="font-family:var(--font-heading); font-size:1.3rem; margin:15px 0 10px; color:var(--white);">Bleaching Warning Systems</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem;">Deploying sea telemetry buoys that feed real-time temperature updates to predict bleaching waves.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY DETAIL MODAL -->
+  <div class="modal" id="speciesModal">
+    <div class="modal-content glass">
+      <div class="modal-close"><i data-lucide="x"></i></div>
+      <div class="modal-img"></div>
+      <div class="modal-body">
+        <span class="modal-tag"></span>
+        <h2 class="modal-title"></h2>
+        <p class="modal-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div>
+          <div class="footer-logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Marine Portal</span>
+          </div>
+          <p class="footer-about">
+            Protecting our marine habitats, restoring coral reefs, recovering ecosystems, and working towards sustainable fisheries worldwide.
+          </p>
+          <div class="footer-socials">
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/facebook.webp" alt="Facebook" style="width: 20px; height: 20px; display: block;"></a>
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/instagram.webp" alt="Instagram" style="width: 20px; height: 20px; display: block;"></a>
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/twitter.webp" alt="Twitter" style="width: 20px; height: 20px; display: block;"></a>
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/linkedin.webp" alt="LinkedIn" style="width: 20px; height: 20px; display: block;"></a>
+          </div>
+        </div>
+        <!-- Col 2 -->
+        <div>
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="./index.html" class="footer-link">Home</a></li>
+            <li><a href="./marine-life.html" class="footer-link">Marine Life</a></li>
+            <li><a href="./conservation-projects.html" class="footer-link">Projects</a></li>
+            <li><a href="./get-involved.html" class="footer-link">Get Involved</a></li>
+          </ul>
+        </div>
+        <!-- Col 3 -->
+        <div>
+          <h3 class="footer-title">Resources</h3>
+          <ul class="footer-links">
+            <li><a href="./resources.html" class="footer-link">Research Guides</a></li>
+            <li><a href="./resources.html" class="footer-link">FAQs</a></li>
+            <li><a href="./contact.html" class="footer-link">Contact Support</a></li>
+            <li><a href="./login.html" class="footer-link">Member Portal</a></li>
+          </ul>
+        </div>
+        <!-- Col 4 -->
+        <div class="footer-newsletter">
+          <h3 class="footer-title">Newsletter</h3>
+          <p>Subscribe to receive clean sea alerts and campaign notifications.</p>
+          <form class="footer-form">
+            <input type="email" class="footer-input" placeholder="Your Email" required>
+            <button type="submit" class="footer-submit" aria-label="Subscribe"><i data-lucide="send" style="width:16px; height:16px;"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Marine Conservation Organization. All rights reserved.</p>
+        <div style="display:flex; gap: 20px;">
+          <a href="./404.html">Privacy Policy</a>
+          <a href="./404.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <div class="back-to-top" id="backToTop">
+    <i data-lucide="arrow-up" style="width: 20px; height: 20px;"></i>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./js/script.js"></script>
+</body>
+</html>

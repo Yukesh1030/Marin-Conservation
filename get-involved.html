@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Involved & Support Marine Causes | Marine Conservation</title>
+  <meta name="description" content="Discover how you can get involved: volunteer, adopt a coral reef, support wildlife rescue, or partner with our marine organization.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">STACKLY</div>
+  </div>
+
+  <!-- Bubble Background -->
+  <div id="bubble-container"></div>
+
+  <!-- NAVBAR -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="./index.html" class="logo">
+        <img src="./assets/webp/logo.webp" alt="Marine Portal" style="height: 40px; width: auto;">
+      </a>
+      <nav class="nav-menu-wrapper">
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Home</a></li>
+          <li><a href="./marine-life.html" class="nav-link">Marine Life</a></li>
+          <li><a href="./conservation-projects.html" class="nav-link">Projects</a></li>
+          <li><a href="./get-involved.html" class="nav-link">Get Involved</a></li>
+          <li><a href="./resources.html" class="nav-link">Resources</a></li>
+          <li><a href="./contact.html" class="nav-link">Contact</a></li>
+          <!-- Auth Dynamic Item -->
+          <li id="navAuthItem"><a href="./login.html" class="btn nav-btn">Login</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Toggle Navigation Menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- SUBPAGE HERO BANNER -->
+  <section class="subpage-hero">
+    <div class="subpage-hero-bg" style="background-image: url('./assets/webp/about-mission.webp');"></div>
+    <div class="subpage-hero-overlay"></div>
+    <div class="subpage-hero-content container flex-center" style="flex-direction: column;">
+      <h1 class="subpage-hero-title reveal-up active"><span class="float-text">Get Involved</span></h1>
+      <p class="subpage-hero-desc reveal-up active" style="transition-delay: 0.15s;">
+        The health of our oceans affects all life on Earth. Every contribution, action, and corporate alliance helps us reverse the tides of degradation.
+      </p>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll Down</span>
+      <div class="scroll-indicator-mouse">
+        <div class="scroll-indicator-wheel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave Divider -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,57.05,18.3,87.43,26.37c76.7,20.32,154,32.7,233.96,30.07Z"></path>
+    </svg>
+  </div>
+
+  <!-- SECTION 2: VOLUNTEER PROGRAMS -->
+  <section class="section-padding">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;" class="mission-split">
+        <div class="mission-content reveal-left">
+          <h2 class="section-title" style="text-align:left; margin-bottom:25px;">Volunteer Programs</h2>
+          <p>
+            Field volunteers form the backbone of our conservation campaigns. As a registered member, you will receive notifications for local beach cleanups, coral reef seeding days, and citizen science reporting workshops.
+          </p>
+          <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:30px;">
+            By logging sighting data in our citizen science portal, you help scientists keep track of migrating whales and sharks. Create an account to log hours and unlock eco-advocate credentials.
+          </p>
+          <a href="./signup.html" class="btn btn-primary">Join the Volunteer Network <i data-lucide="user-plus" style="width:16px; height:16px;"></i></a>
+        </div>
+        <div class="mission-img-wrapper reveal-right">
+          <img src="./assets/webp/about-mission.webp" alt="Volunteers at ocean" class="mission-img" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: COMMUNITY EVENTS & INTERNSHIPS -->
+  <section class="section-padding" style="background: rgba(3, 4, 94, 0.15);">
+    <div class="container">
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px;">
+        <!-- Event Card -->
+        <div class="glass" style="padding:40px; border-radius:var(--border-radius);">
+          <div class="stat-icon"><i data-lucide="calendar-days" style="stroke:var(--accent);"></i></div>
+          <h3 style="font-family:var(--font-heading); font-size:1.5rem; font-weight:700; margin:15px 0 10px; color:var(--white);">Community Campaigns Calendar</h3>
+          <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:20px;">
+            Join local ocean awareness seminars, zero-plastic workshops, or participate in structured coastal surveys near your region. Keep up to date with regional campaigns.
+          </p>
+          <a href="./contact.html" class="news-link">Request Calendar Event <i data-lucide="arrow-right" style="width:14px; height:14px;"></i></a>
+        </div>
+
+        <!-- Internship Card -->
+        <div class="glass" style="padding:40px; border-radius:var(--border-radius);">
+          <div class="stat-icon"><i data-lucide="graduation-cap" style="stroke:var(--accent);"></i></div>
+          <h3 style="font-family:var(--font-heading); font-size:1.5rem; font-weight:700; margin:15px 0 10px; color:var(--white);">Science & Policy Internships</h3>
+          <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:20px;">
+            For aspiring marine biologists and environmental law students. We offer structured research internships at our clinics and policy lobbies.
+          </p>
+          <a href="./contact.html" class="news-link">View Open Positions <i data-lucide="arrow-right" style="width:14px; height:14px;"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: DONATION PROGRAMS -->
+  <section class="section-padding">
+    <div class="container">
+      <h2 class="section-title reveal-up">Donation Programs</h2>
+      <p class="section-subtitle reveal-up">Directly fund field kits, clinic operations, and telemetry systems. Restoring marine habitats is a direct investment.</p>
+      
+      <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:24px;" class="news-grid">
+        <!-- Donation 1 -->
+        <div class="glass" style="padding:30px; border-radius:var(--border-radius); display:flex; flex-direction:column; gap:15px;">
+          <h3 style="font-family:var(--font-heading); font-size:1.35rem; font-weight:700; color:var(--white);">Adopt a Coral Reef</h3>
+          <div style="font-size:2.2rem; font-weight:800; color:var(--accent); font-family:var(--font-heading);">$50 <span style="font-size:0.95rem; color:var(--text-muted); font-weight:400;">/ Month</span></div>
+          <p style="color:var(--text-muted); font-size:0.9rem; flex-grow:1;">
+            Funds the micro-fragmentation, nursery tank maintenance, and transplantation of 5 resilient corals onto artificial reef structures.
+          </p>
+          <a href="#donateSection" class="btn btn-secondary" style="text-align:center;">Select Tier</a>
+        </div>
+
+        <!-- Donation 2 -->
+        <div class="glass" style="padding:30px; border-radius:var(--border-radius); display:flex; flex-direction:column; gap:15px; border-color:var(--accent);">
+          <h3 style="font-family:var(--font-heading); font-size:1.35rem; font-weight:700; color:var(--white);">Support Wildlife Rescue</h3>
+          <div style="font-size:2.2rem; font-weight:800; color:var(--accent); font-family:var(--font-heading);">$100 <span style="font-size:0.95rem; color:var(--text-muted); font-weight:400;">/ Month</span></div>
+          <p style="color:var(--text-muted); font-size:0.9rem; flex-grow:1;">
+            Directly supplies emergency medical kits, transport carriers, and marine veterinarian fluid therapy units for stranded animals.
+          </p>
+          <a href="#donateSection" class="btn btn-primary" style="text-align:center;">Select Tier</a>
+        </div>
+
+        <!-- Donation 3 -->
+        <div class="glass" style="padding:30px; border-radius:var(--border-radius); display:flex; flex-direction:column; gap:15px;">
+          <h3 style="font-family:var(--font-heading); font-size:1.35rem; font-weight:700; color:var(--white);">Fund Patrol Operations</h3>
+          <div style="font-size:2.2rem; font-weight:800; color:var(--accent); font-family:var(--font-heading);">$500 <span style="font-size:0.95rem; color:var(--text-muted); font-weight:400;">/ Month</span></div>
+          <p style="color:var(--text-muted); font-size:0.9rem; flex-grow:1;">
+            Finances boat fuel, satellite communication systems, and sonar gear for night-patrol shifts guarding marine protected zones.
+          </p>
+          <a href="#donateSection" class="btn btn-secondary" style="text-align:center;">Select Tier</a>
+        </div>
+      </div>
+
+      <!-- Donation form -->
+      <div id="donateSection" class="glass reveal-zoom-in" style="max-width:600px; margin:60px auto 0; padding:40px; border-radius:var(--border-radius);">
+        <h3 style="font-family:var(--font-heading); font-size:1.5rem; font-weight:700; text-align:center; margin-bottom:25px; color:var(--white);">Make a Safe Contribution</h3>
+        <form style="display:flex; flex-direction:column; gap:15px;">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" placeholder="john@example.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Donation Tier</label>
+              <select class="form-control" required style="appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2300B4D8%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22m6 9 6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 16px;">
+                <option value="50">Adopt a Reef - $50/mo</option>
+                <option value="100">Wildlife Rescue - $100/mo</option>
+                <option value="500">Patrol Operations - $500/mo</option>
+                <option value="other">Custom Amount</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Card Details</label>
+              <input type="text" class="form-control" placeholder="1111 - 2222 - 3333 - 4444" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit-btn" style="margin-top:10px;">Process Donation <i data-lucide="credit-card" style="width:16px; height:16px;"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: PARTNERSHIPS -->
+  <section class="section-padding" style="background: rgba(3, 4, 94, 0.15); padding-bottom: 120px;">
+    <div class="container">
+      <div style="display:grid; grid-template-columns: 1fr 1.2fr; gap:40px; align-items:center;" class="mission-split">
+        <div class="mission-content reveal-left">
+          <h2 class="section-title" style="text-align:left; margin-bottom:25px;">Corporate Partnerships</h2>
+          <p>
+            We partner with businesses to deploy large-scale conservation setups. Align your sustainability goals with measurable marine impact: fund specific ocean buoys, restore regional bays, or participate in plastic offset challenges.
+          </p>
+          <p style="color:var(--text-muted); font-size:0.95rem;">
+            All corporate alliances receive certified biodiversity impact logs, audited reports, and co-marketing media resources. Fill out the application, and our partnership liaison will get in touch.
+          </p>
+        </div>
+        
+        <!-- Partnership Form -->
+        <div class="glass reveal-right" style="padding:40px; border-radius:var(--border-radius);">
+          <h3 style="font-family:var(--font-heading); font-size:1.35rem; font-weight:700; margin-bottom:20px; color:var(--white);">Alliances Request</h3>
+          <form style="display:flex; flex-direction:column; gap:15px;">
+            <div class="form-group">
+              <label class="form-label">Company Name</label>
+              <input type="text" class="form-control" placeholder="Acme Marine Corp" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Contact Name</label>
+                <input type="text" class="form-control" placeholder="Contact Representative" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Contact Email</label>
+                <input type="email" class="form-control" placeholder="rep@company.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Partnership Intent</label>
+              <select class="form-control" required style="appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2300B4D8%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22m6 9 6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 16px;">
+                <option value="sponsorship">Corporate Sponsorship</option>
+                <option value="buoy">Funding Telemetry Buoy</option>
+                <option value="offset">Plastic Offset Challenge</option>
+                <option value="grant">Foundation Grant</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit-btn" style="margin-top:10px;">Send Partnership Request <i data-lucide="handshake" style="width:16px; height:16px;"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div>
+          <div class="footer-logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Marine Portal</span>
+          </div>
+          <p class="footer-about">
+            Protecting our marine habitats, restoring coral reefs, recovering ecosystems, and working towards sustainable fisheries worldwide.
+          </p>
+          <div class="footer-socials">
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/facebook.webp" alt="Facebook" style="width: 20px; height: 20px; display: block;"></a>
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/instagram.webp" alt="Instagram" style="width: 20px; height: 20px; display: block;"></a>
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/twitter.webp" alt="Twitter" style="width: 20px; height: 20px; display: block;"></a>
+            <a href="./404.html" class="footer-social-link"><img src="./assets/webp/linkedin.webp" alt="LinkedIn" style="width: 20px; height: 20px; display: block;"></a>
+          </div>
+        </div>
+        <!-- Col 2 -->
+        <div>
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="./index.html" class="footer-link">Home</a></li>
+            <li><a href="./marine-life.html" class="footer-link">Marine Life</a></li>
+            <li><a href="./conservation-projects.html" class="footer-link">Projects</a></li>
+            <li><a href="./get-involved.html" class="footer-link">Get Involved</a></li>
+          </ul>
+        </div>
+        <!-- Col 3 -->
+        <div>
+          <h3 class="footer-title">Resources</h3>
+          <ul class="footer-links">
+            <li><a href="./resources.html" class="footer-link">Research Guides</a></li>
+            <li><a href="./resources.html" class="footer-link">FAQs</a></li>
+            <li><a href="./contact.html" class="footer-link">Contact Support</a></li>
+            <li><a href="./login.html" class="footer-link">Member Portal</a></li>
+          </ul>
+        </div>
+        <!-- Col 4 -->
+        <div class="footer-newsletter">
+          <h3 class="footer-title">Newsletter</h3>
+          <p>Subscribe to receive clean sea alerts and campaign notifications.</p>
+          <form class="footer-form">
+            <input type="email" class="footer-input" placeholder="Your Email" required>
+            <button type="submit" class="footer-submit" aria-label="Subscribe"><i data-lucide="send" style="width:16px; height:16px;"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Marine Conservation Organization. All rights reserved.</p>
+        <div style="display:flex; gap: 20px;">
+          <a href="./404.html">Privacy Policy</a>
+          <a href="./404.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <div class="back-to-top" id="backToTop">
+    <i data-lucide="arrow-up" style="width: 20px; height: 20px;"></i>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./js/script.js"></script>
+</body>
+</html>

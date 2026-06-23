@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | Marine Conservation</title>
+  <meta name="description" content="Create a new account on the Marine Conservation portal to start protecting marine life.">
+  
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="./css/style.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="auth-body">
+
+  <!-- Floating bubbles background -->
+  <div id="bubble-container"></div>
+
+  <a href="./login.html" class="auth-nav"><i data-lucide="arrow-left" style="width:16px; height:16px;"></i> Back to Login</a>
+
+  <div class="auth-card glass reveal-up active">
+    <div class="auth-logo" style="margin-bottom: 20px;">
+      <a href="./index.html" style="display:flex; align-items:center; justify-content:center;">
+        <img src="./assets/webp/logo.webp" alt="Marine Portal" style="height: 48px; width: auto; display: block;">
+      </a>
+    </div>
+    
+    <div class="auth-header">
+      <h1>Create Account</h1>
+      <p>Register as a volunteer or campaigners to start your journey</p>
+    </div>
+
+    <form class="auth-form" id="signupForm">
+      <div class="form-group">
+        <label class="form-label">Sign Up As</label>
+        <select class="form-control" id="roleSelect" style="appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2300B4D8%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22m6 9 6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 16px;" required>
+          <option value="customer">Visitor / Volunteer</option>
+          <option value="seller">Campaigner / Organizer</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-control" placeholder="John Doe" required id="nameInput">
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-control" placeholder="you@example.com" required id="emailInput">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" placeholder="••••••••" required id="passInput">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" placeholder="••••••••" required id="confirmPassInput">
+      </div>
+
+      <button type="submit" class="btn btn-primary form-submit-btn" style="margin-top: 10px;">
+        Sign Up <i data-lucide="user-plus" style="width:18px; height:18px;"></i>
+      </button>
+    </form>
+
+    <div class="auth-footer">
+      Already have an account? <a href="./login.html">Login</a>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const signupForm = document.getElementById('signupForm');
+      if (signupForm) {
+        signupForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const pass = document.getElementById('passInput').value;
+          const confirmPass = document.getElementById('confirmPassInput').value;
+          
+          if (pass !== confirmPass) {
+            alert("Passwords do not match!");
+            return;
+          }
+          
+          const name = document.getElementById('nameInput').value;
+          const email = document.getElementById('emailInput').value;
+          const role = document.getElementById('roleSelect').value;
+          
+          // Save mock user creation details (matching Cultural Festivals)
+          localStorage.setItem('stackly_registered_name', name);
+          localStorage.setItem('stackly_registered_email', email);
+          localStorage.setItem('stackly_registered_role', role);
+
+          alert("Account created successfully! Redirecting to login page.");
+          window.location.replace('login.html');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
