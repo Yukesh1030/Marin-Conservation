@@ -381,4 +381,69 @@ document.addEventListener('DOMContentLoaded', () => {
       navAuthItem.innerHTML = `<a href="./login.html" class="btn nav-btn">Login</a>`;
     }
   }
+
+  // 17. Letter Reveal Animation Splitter
+  window.initLetterReveal = function(element) {
+    if (!element) return;
+    const text = element.textContent.trim();
+    element.innerHTML = '';
+    element.classList.add('letter-reveal-anim');
+    
+    [...text].forEach((char, index) => {
+      const span = document.createElement('span');
+      span.textContent = char === ' ' ? '\u00A0' : char;
+      span.style.transitionDelay = `${index * 30}ms`;
+      element.appendChild(span);
+    });
+    
+    setTimeout(() => {
+      element.classList.add('active');
+    }, 100);
+  };
+
+  // 18. Scramble Text Effect
+  window.scrambleText = function(element, duration = 1200) {
+    if (!element) return;
+    const originalText = element.getAttribute('data-scramble') || element.textContent.trim();
+    element.setAttribute('data-scramble', originalText);
+    const chars = '!<>-_\\/[]{}—=+*^?#________';
+    let start = null;
+    
+    function randomChar() {
+      return chars[Math.floor(Math.random() * chars.length)];
+    }
+    
+    function update(timestamp) {
+      if (!start) start = timestamp;
+      const progress = (timestamp - start) / duration;
+      
+      if (progress < 1) {
+        const length = originalText.length;
+        let scrambled = '';
+        for (let i = 0; i < length; i++) {
+          if (originalText[i] === ' ') {
+            scrambled += ' ';
+          } else if (i < length * progress) {
+            scrambled += originalText[i];
+          } else {
+            scrambled += randomChar();
+          }
+        }
+        element.textContent = scrambled;
+        requestAnimationFrame(update);
+      } else {
+        element.textContent = originalText;
+      }
+    }
+    requestAnimationFrame(update);
+  };
+
+  // Trigger animations on load
+  document.querySelectorAll('.letter-reveal-trigger').forEach(el => {
+    window.initLetterReveal(el);
+  });
+
+  document.querySelectorAll('.scramble-trigger').forEach(el => {
+    window.scrambleText(el);
+  });
 });

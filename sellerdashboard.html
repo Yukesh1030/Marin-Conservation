@@ -26,16 +26,16 @@
       </div>
       <ul class="sidebar-menu">
         <li class="sidebar-menu-item active" id="menuOverview">
-          <a href="#" data-tab="overview"><i data-lucide="layout-dashboard" style="width:18px; height:18px;"></i> Overview</a>
+          <a href="./sellerdashboard.html"><i data-lucide="layout-dashboard" style="width:18px; height:18px;"></i> Overview</a>
         </li>
         <li class="sidebar-menu-item" id="menuManage">
-          <a href="#" data-tab="manage"><i data-lucide="folder-open" style="width:18px; height:18px;"></i> Manage Campaigns</a>
+          <a href="./manage-campaigns.html"><i data-lucide="folder-open" style="width:18px; height:18px;"></i> Manage Campaigns</a>
         </li>
         <li class="sidebar-menu-item" id="menuVolunteers">
-          <a href="#" data-tab="volunteers"><i data-lucide="users" style="width:18px; height:18px;"></i> Volunteer List</a>
+          <a href="./volunteer-list.html"><i data-lucide="users" style="width:18px; height:18px;"></i> Volunteer List</a>
         </li>
         <li class="sidebar-menu-item" id="menuDonations">
-          <a href="#" data-tab="donations"><i data-lucide="credit-card" style="width:18px; height:18px;"></i> Campaigns Funding</a>
+          <a href="./campaigns-funding.html"><i data-lucide="credit-card" style="width:18px; height:18px;"></i> Campaigns Funding</a>
         </li>
       </ul>
       <div class="sidebar-logout">
@@ -63,7 +63,7 @@
       <header class="dashboard-header">
         <div>
           <h1 style="font-family: var(--font-heading); font-size: 1.85rem; font-weight:800; color:var(--white);" id="welcomeUser">Welcome Back, Campaigner</h1>
-          <p style="color:var(--text-muted); font-size:0.95rem;">Manage active conservation projects, approve volunteer lists, and track fundraising.</p>
+          <p style="color:var(--text-muted); font-size:0.95rem;" class="fade-in-up-anim">Manage active conservation projects, approve volunteer lists, and track fundraising.</p>
         </div>
         <div class="dashboard-user-profile">
           <div class="dashboard-user-avatar" id="avatarName">O</div>
@@ -72,12 +72,12 @@
       </header>
 
       <!-- Quick Stats Row -->
-      <div class="dashboard-stats">
+      <div class="dashboard-stats fade-in-up-anim" style="animation-delay: 0.1s;">
         <div class="dashboard-stat-card glass">
           <div class="dashboard-stat-icon" style="background-color:rgba(0, 180, 216, 0.15); color:var(--accent);"><i data-lucide="anchor"></i></div>
           <div class="dashboard-stat-info">
             <h3>Active Projects</h3>
-            <div class="dashboard-stat-value" id="projectCount">4 Projects</div>
+            <div class="dashboard-stat-value gradient-flow-text" id="projectCount">4 Projects</div>
           </div>
         </div>
 
@@ -85,7 +85,7 @@
           <div class="dashboard-stat-icon" style="background-color:rgba(42, 157, 143, 0.15); color:var(--sea-green);"><i data-lucide="users"></i></div>
           <div class="dashboard-stat-info">
             <h3>Volunteers</h3>
-            <div class="dashboard-stat-value" id="totalVolunteersCount">142 Enrolled</div>
+            <div class="dashboard-stat-value text-fill-anim" id="totalVolunteersCount" style="animation-delay: 0.3s;">142 Enrolled</div>
           </div>
         </div>
 
@@ -93,7 +93,7 @@
           <div class="dashboard-stat-icon" style="background-color:rgba(255, 255, 255, 0.05); color:var(--sand);"><i data-lucide="dollar-sign"></i></div>
           <div class="dashboard-stat-info">
             <h3>Funds Raised</h3>
-            <div class="dashboard-stat-value">$18,450</div>
+            <div class="dashboard-stat-value scramble-trigger" data-scramble="$18,450">$18,450</div>
           </div>
         </div>
 
@@ -101,7 +101,7 @@
           <div class="dashboard-stat-icon" style="background-color:rgba(2, 62, 138, 0.3); color:var(--primary);"><i data-lucide="activity"></i></div>
           <div class="dashboard-stat-info">
             <h3>Sensors Live</h3>
-            <div class="dashboard-stat-value">12 Buoys</div>
+            <div class="dashboard-stat-value text-mask-reveal" style="animation-delay: 0.5s;">12 Buoys</div>
           </div>
         </div>
       </div>
@@ -113,7 +113,7 @@
         <div id="panelContainer" style="display:flex; flex-direction:column; gap:24px;">
           
           <!-- PANEL 1: OVERVIEW -->
-          <div class="dashboard-panel glass tab-panel" id="panelOverview">
+          <div class="dashboard-panel glass" id="panelOverview">
             <div class="dashboard-panel-header">
               <h2 class="dashboard-panel-title">Campaign Controls</h2>
             </div>
@@ -157,135 +157,129 @@
             </div>
           </div>
 
-          <!-- PANEL 2: MANAGE CAMPAIGNS -->
-          <div class="dashboard-panel glass tab-panel" id="panelManage" style="display:none;">
-            <div class="dashboard-panel-header">
-              <h2 class="dashboard-panel-title">Campaign Listing</h2>
+          <!-- PANEL 2: SENSOR NETWORK MONITOR -->
+          <div class="dashboard-panel glass fade-in-up-anim" style="animation-delay: 0.15s;">
+            <div class="dashboard-panel-header" style="margin-bottom: 15px;">
+              <h2 class="dashboard-panel-title">Sensor Network Monitor</h2>
             </div>
-            <div style="display:flex; flex-direction:column; gap:15px; margin-bottom:30px;" id="campaignList">
-              <div class="glass-light" style="padding:16px; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                  <h4 style="font-weight:700; color:var(--white);">Coral Restoration Reef Planting</h4>
-                  <p style="font-size:0.8rem; color:var(--text-muted);">Active in Queensland, Australia</p>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom: 20px;">
+              Verify battery charge, telemetry status, and signal strength across ocean sectors.
+            </p>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px;" id="buoyGrid">
+              <!-- Buoy 1 -->
+              <div class="glass-light" style="padding:15px; border-radius:10px; display:flex; flex-direction:column; gap:8px; border:1px solid rgba(16, 185, 129, 0.2);" id="buoyNode1">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-weight:700; color:var(--white); font-size:0.85rem;">Buoy #1</span>
+                  <div style="width: 8px; height: 8px; background:#10B981; border-radius:50%; box-shadow: 0 0 8px #10B981;"></div>
                 </div>
-                <span style="background:rgba(42, 157, 143, 0.15); color:var(--sea-green); padding:4px 8px; border-radius:12px; font-size:0.75rem; font-weight:600;">ACTIVE</span>
-              </div>
-              <div class="glass-light" style="padding:16px; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                  <h4 style="font-weight:700; color:var(--white);">Ocean Plastic Beach Cleanup</h4>
-                  <p style="font-size:0.8rem; color:var(--text-muted);">Active in Cornwall, UK</p>
+                <div style="font-size:0.75rem; color:var(--text-muted);">
+                  Charge: <strong style="color:var(--white);">94%</strong>
                 </div>
-                <span style="background:rgba(42, 157, 143, 0.15); color:var(--sea-green); padding:4px 8px; border-radius:12px; font-size:0.75rem; font-weight:600;">ACTIVE</span>
-              </div>
-              <div class="glass-light" style="padding:16px; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                  <h4 style="font-weight:700; color:var(--white);">Humpback Whale Migration Survey</h4>
-                  <p style="font-size:0.8rem; color:var(--text-muted);">Active in Maui, Hawaii</p>
+                <div class="progress-bar-track" style="height:4px;">
+                  <div style="background:var(--sea-green); width:94%; height:100%; border-radius:2px;"></div>
                 </div>
-                <span style="background:rgba(42, 157, 143, 0.15); color:var(--sea-green); padding:4px 8px; border-radius:12px; font-size:0.75rem; font-weight:600;">ACTIVE</span>
+                <button class="btn btn-secondary ping-buoy-btn" style="padding:4px 8px; font-size:0.7rem; border-radius:4px; margin-top:5px; width: 100%;" data-buoy="1">Ping Node</button>
               </div>
-            </div>
 
-            <div style="border-top:1px solid rgba(255,255,255,0.05); padding-top:20px;">
-              <h3 style="font-family:var(--font-heading); font-size:1.1rem; font-weight:700; margin-bottom:15px; color:var(--white);">Add New Campaign</h3>
-              <form id="addCampaignForm" style="display:flex; flex-direction:column; gap:12px;">
-                <input type="text" class="form-control" placeholder="Campaign Name" required id="newCampaignName">
-                <input type="text" class="form-control" placeholder="Location / Focus Area" required id="newCampaignLoc">
-                <button type="submit" class="btn btn-primary" style="align-self:flex-start; padding:8px 16px; font-size:0.85rem;">Create Listing</button>
-              </form>
-            </div>
-          </div>
-
-          <!-- PANEL 3: VOLUNTEERS LIST -->
-          <div class="dashboard-panel glass tab-panel" id="panelVolunteers" style="display:none;">
-            <div class="dashboard-panel-header">
-              <h2 class="dashboard-panel-title">Volunteer Approvals</h2>
-            </div>
-            <div style="overflow-x:auto;">
-              <table style="width:100%; border-collapse:collapse; text-align:left; min-width:500px;">
-                <thead>
-                  <tr style="border-bottom:1px solid rgba(255,255,255,0.1); color:var(--text-muted); font-size:0.85rem;">
-                    <th style="padding:12px 8px;">NAME</th>
-                    <th style="padding:12px 8px;">CAMPAIGN</th>
-                    <th style="padding:12px 8px;">STATUS</th>
-                    <th style="padding:12px 8px; text-align:right;">ACTION</th>
-                  </tr>
-                </thead>
-                <tbody id="volunteerTableBody">
-                  <tr style="border-bottom:1px solid rgba(255,255,255,0.05); font-size:0.9rem;" class="volunteer-row">
-                    <td style="padding:16px 8px; font-weight:600; color:var(--white);">Alice Vance</td>
-                    <td style="padding:16px 8px; color:var(--text-muted);">Coral Restoration</td>
-                    <td style="padding:16px 8px;"><span class="v-status" style="background:rgba(245, 158, 11, 0.15); color:#F59E0B; padding:4px 8px; border-radius:12px; font-size:0.75rem; font-weight:600;">PENDING</span></td>
-                    <td style="padding:16px 8px; text-align:right;">
-                      <button class="btn btn-primary approve-btn" style="padding:4px 10px; font-size:0.75rem; border-radius:4px; margin-right:5px;">Approve</button>
-                      <button class="btn btn-secondary reject-btn" style="padding:4px 10px; font-size:0.75rem; border-radius:4px; border-color:#EF4444; color:#EF4444;">Reject</button>
-                    </td>
-                  </tr>
-                  <tr style="border-bottom:1px solid rgba(255,255,255,0.05); font-size:0.9rem;" class="volunteer-row">
-                    <td style="padding:16px 8px; font-weight:600; color:var(--white);">Marcus Broady</td>
-                    <td style="padding:16px 8px; color:var(--text-muted);">Ocean Plastic Cleanup</td>
-                    <td style="padding:16px 8px;"><span class="v-status" style="background:rgba(245, 158, 11, 0.15); color:#F59E0B; padding:4px 8px; border-radius:12px; font-size:0.75rem; font-weight:600;">PENDING</span></td>
-                    <td style="padding:16px 8px; text-align:right;">
-                      <button class="btn btn-primary approve-btn" style="padding:4px 10px; font-size:0.75rem; border-radius:4px; margin-right:5px;">Approve</button>
-                      <button class="btn btn-secondary reject-btn" style="padding:4px 10px; font-size:0.75rem; border-radius:4px; border-color:#EF4444; color:#EF4444;">Reject</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- PANEL 4: DONATIONS HISTORY -->
-          <div class="dashboard-panel glass tab-panel" id="panelDonations" style="display:none;">
-            <div class="dashboard-panel-header">
-              <h2 class="dashboard-panel-title">Funding Received</h2>
-            </div>
-            <div style="display:flex; flex-direction:column; gap:12px;">
-              <div class="glass-light" style="padding:16px; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                  <h4 style="font-weight:700; color:var(--white);">Anonymous Eco Donation</h4>
-                  <p style="font-size:0.8rem; color:var(--text-muted);">Assigned to Reef Planting</p>
+              <!-- Buoy 2 -->
+              <div class="glass-light" style="padding:15px; border-radius:10px; display:flex; flex-direction:column; gap:8px; border:1px solid rgba(16, 185, 129, 0.2);" id="buoyNode2">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-weight:700; color:var(--white); font-size:0.85rem;">Buoy #2</span>
+                  <div style="width: 8px; height: 8px; background:#10B981; border-radius:50%; box-shadow: 0 0 8px #10B981;"></div>
                 </div>
-                <div style="font-family:var(--font-heading); font-weight:800; color:var(--accent); font-size:1.15rem;">+$2,500.00</div>
+                <div style="font-size:0.75rem; color:var(--text-muted);">
+                  Charge: <strong style="color:var(--white);">81%</strong>
+                </div>
+                <div class="progress-bar-track" style="height:4px;">
+                  <div style="background:var(--sea-green); width:81%; height:100%; border-radius:2px;"></div>
+                </div>
+                <button class="btn btn-secondary ping-buoy-btn" style="padding:4px 8px; font-size:0.7rem; border-radius:4px; margin-top:5px; width: 100%;" data-buoy="2">Ping Node</button>
               </div>
-              <div class="glass-light" style="padding:16px; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                  <h4 style="font-weight:700; color:var(--white);">GreenTech Partners Corp</h4>
-                  <p style="font-size:0.8rem; color:var(--text-muted);">Assigned to Whale Tracking Sensors</p>
+
+              <!-- Buoy 3 -->
+              <div class="glass-light" style="padding:15px; border-radius:10px; display:flex; flex-direction:column; gap:8px; border:1px solid rgba(239, 68, 68, 0.2);" id="buoyNode3">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-weight:700; color:var(--white); font-size:0.85rem;">Buoy #3</span>
+                  <div style="width: 8px; height: 8px; background:#EF4444; border-radius:50%; box-shadow: 0 0 8px #EF4444;"></div>
                 </div>
-                <div style="font-family:var(--font-heading); font-weight:800; color:var(--accent); font-size:1.15rem;">+$10,000.00</div>
+                <div style="font-size:0.75rem; color:var(--text-muted);">
+                  Charge: <strong style="color:#EF4444;">14%</strong>
+                </div>
+                <div class="progress-bar-track" style="height:4px;">
+                  <div style="background:#EF4444; width:14%; height:100%; border-radius:2px;"></div>
+                </div>
+                <button class="btn btn-secondary ping-buoy-btn" style="padding:4px 8px; font-size:0.7rem; border-radius:4px; margin-top:5px; width: 100%;" data-buoy="3">Ping Node</button>
               </div>
-              <div class="glass-light" style="padding:16px; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                  <h4 style="font-weight:700; color:var(--white);">Sarah Jenkins</h4>
-                  <p style="font-size:0.8rem; color:var(--text-muted);">Assigned to Beach Cleanups</p>
+
+              <!-- Buoy 4 -->
+              <div class="glass-light" style="padding:15px; border-radius:10px; display:flex; flex-direction:column; gap:8px; border:1px solid rgba(16, 185, 129, 0.2);" id="buoyNode4">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-weight:700; color:var(--white); font-size:0.85rem;">Buoy #4</span>
+                  <div style="width: 8px; height: 8px; background:#10B981; border-radius:50%; box-shadow: 0 0 8px #10B981;"></div>
                 </div>
-                <div style="font-family:var(--font-heading); font-weight:800; color:var(--accent); font-size:1.15rem;">+$150.00</div>
+                <div style="font-size:0.75rem; color:var(--text-muted);">
+                  Charge: <strong style="color:var(--white);">89%</strong>
+                </div>
+                <div class="progress-bar-track" style="height:4px;">
+                  <div style="background:var(--sea-green); width:89%; height:100%; border-radius:2px;"></div>
+                </div>
+                <button class="btn btn-secondary ping-buoy-btn" style="padding:4px 8px; font-size:0.7rem; border-radius:4px; margin-top:5px; width: 100%;" data-buoy="4">Ping Node</button>
               </div>
             </div>
           </div>
 
+          <!-- PANEL 3: QUICK ACTIONS TOOLSET -->
+          <div class="dashboard-panel glass fade-in-up-anim" style="animation-delay: 0.25s;">
+            <div class="dashboard-panel-header" style="margin-bottom: 15px;">
+              <h2 class="dashboard-panel-title">Organizer Actions Console</h2>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom: 20px;">
+              Issue broadcast alerts or trigger synchronizations immediately on target networks.
+            </p>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <button class="btn btn-primary alert-action-btn" data-action="emergency" style="padding:8px 16px; font-size:0.85rem; border-radius: 6px;"><i data-lucide="alert-triangle" style="width:14px; height:14px; vertical-align:-2px; margin-right:4px;"></i> Emergency Alert</button>
+              <button class="btn btn-secondary alert-action-btn" data-action="sync" style="padding:8px 16px; font-size:0.85rem; border-radius: 6px;"><i data-lucide="refresh-cw" style="width:14px; height:14px; vertical-align:-2px; margin-right:4px;"></i> Force Sync</button>
+              <button class="btn btn-secondary alert-action-btn" data-action="backup" style="padding:8px 16px; font-size:0.85rem; border-radius: 6px;"><i data-lucide="hard-drive" style="width:14px; height:14px; vertical-align:-2px; margin-right:4px;"></i> Request Backup</button>
+              <button class="btn btn-secondary alert-action-btn" data-action="purge" style="padding:8px 16px; font-size:0.85rem; border-color:#EF4444; color:#EF4444; border-radius: 6px;"><i data-lucide="trash-2" style="width:14px; height:14px; vertical-align:-2px; margin-right:4px;"></i> Clear Logs</button>
+            </div>
+          </div>
         </div>
 
-        <!-- RIGHT COLUMN: System Health Logs -->
-        <div class="dashboard-panel glass reveal-right active" style="align-self: flex-start;">
-          <div class="dashboard-panel-header">
-            <h2 class="dashboard-panel-title">System Status</h2>
+        <!-- RIGHT COLUMN: System Health Logs & Telemetry -->
+        <div style="display:flex; flex-direction:column; gap:24px; align-self: flex-start;" class="reveal-right active">
+          <!-- System Status -->
+          <div class="dashboard-panel glass" style="width: 100%;">
+            <div class="dashboard-panel-header">
+              <h2 class="dashboard-panel-title">System Status</h2>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div style="background-color: rgba(255,255,255,0.02); border-left: 4px solid var(--accent); padding: 16px; border-radius: 4px;">
+                <h4 style="font-weight:600; font-size:0.9rem; margin-bottom:0.25rem; color:var(--white);">Reef Buoy #4 Online</h4>
+                <p style="font-size:0.8rem; color:var(--text-muted);">GPS telemetry locked. Temperature sensors broadcasting at 26.4°C.</p>
+              </div>
+
+              <div style="background-color: rgba(255,255,255,0.02); border-left: 4px solid var(--sea-green); padding: 16px; border-radius: 4px;">
+                <h4 style="font-weight:600; font-size:0.9rem; margin-bottom:0.25rem; color:var(--white);">Volunteer Intake Open</h4>
+                <p style="font-size:0.8rem; color:var(--text-muted);">Beach Cleanup portal accepting applications. 8 new signups pending.</p>
+              </div>
+
+              <div style="background-color: rgba(255,255,255,0.02); border-left: 4px solid var(--sand); padding: 16px; border-radius: 4px;">
+                <h4 style="font-weight:600; font-size:0.9rem; margin-bottom:0.25rem; color:var(--white);">Donation API Working</h4>
+                <p style="font-size:0.8rem; color:var(--text-muted);">Encrypted processing gateways running on sandbox mode. Mock logs active.</p>
+              </div>
+            </div>
           </div>
-          <div style="display:flex; flex-direction:column; gap:16px;">
-            <div style="background-color: rgba(255,255,255,0.02); border-left: 4px solid var(--accent); padding: 16px; border-radius: 4px;">
-              <h4 style="font-weight:600; font-size:0.9rem; margin-bottom:0.25rem; color:var(--white);">Reef Buoy #4 Online</h4>
-              <p style="font-size:0.8rem; color:var(--text-muted);">GPS telemetry locked. Temperature sensors broadcasting at 26.4°C.</p>
-            </div>
 
-            <div style="background-color: rgba(255,255,255,0.02); border-left: 4px solid var(--sea-green); padding: 16px; border-radius: 4px;">
-              <h4 style="font-weight:600; font-size:0.9rem; margin-bottom:0.25rem; color:var(--white);">Volunteer Intake Open</h4>
-              <p style="font-size:0.8rem; color:var(--text-muted);">Beach Cleanup portal accepting applications. 8 new signups pending.</p>
+          <!-- Telemetry Stream Console -->
+          <div class="dashboard-panel glass" style="width: 100%;">
+            <div class="dashboard-panel-header">
+              <h2 class="dashboard-panel-title">Telemetry Stream</h2>
             </div>
-
-            <div style="background-color: rgba(255,255,255,0.02); border-left: 4px solid var(--sand); padding: 16px; border-radius: 4px;">
-              <h4 style="font-weight:600; font-size:0.9rem; margin-bottom:0.25rem; color:var(--white);">Donation API Working</h4>
-              <p style="font-size:0.8rem; color:var(--text-muted);">Encrypted processing gateways running on sandbox mode. Mock logs active.</p>
+            <div style="font-family: var(--font-body); font-size:0.85rem; color:var(--text-muted);">
+              Live buoy transmission feeds:
+              <div id="telemetryConsole" class="telemetry-console">
+                <!-- Log entries will be written here -->
+              </div>
             </div>
           </div>
         </div>
@@ -298,7 +292,7 @@
   <script src="./js/script.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Session check (exactly same as Cultural Festivals)
+      // 1. Session check
       if (localStorage.getItem('stackly_logged_in') !== 'true') {
         window.location.replace('login.html');
       }
@@ -311,39 +305,19 @@
       const usernameDisplay = document.getElementById('usernameDisplay');
       const avatarName = document.getElementById('avatarName');
 
-      if (welcomeUser) welcomeUser.innerText = `Welcome Back, ${registeredName}`;
+      if (welcomeUser) {
+        welcomeUser.innerText = `Welcome Back, ${registeredName}`;
+        if (window.initLetterReveal) {
+          window.initLetterReveal(welcomeUser);
+        }
+      }
       if (usernameDisplay) usernameDisplay.innerText = registeredEmail;
       if (avatarName) {
         const initials = registeredName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
         avatarName.innerText = initials || 'O';
       }
 
-      // 3. Tab switching logic
-      const menuItems = document.querySelectorAll('.sidebar-menu-item');
-      const tabPanels = document.querySelectorAll('.tab-panel');
-
-      menuItems.forEach(item => {
-        const link = item.querySelector('a');
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const targetTab = link.getAttribute('data-tab');
-
-          // Set active menu item
-          menuItems.forEach(mi => mi.classList.remove('active'));
-          item.classList.add('active');
-
-          // Show targeted panel
-          tabPanels.forEach(panel => {
-            if (panel.id === `panel${targetTab.charAt(0).toUpperCase() + targetTab.slice(1)}`) {
-              panel.style.display = 'block';
-            } else {
-              panel.style.display = 'none';
-            }
-          });
-        });
-      });
-
-      // 4. Scenario Toggles Interaction
+      // 3. Scenario Toggles Interaction
       const devToggles = document.querySelectorAll('.device-toggle');
       devToggles.forEach(toggle => {
         toggle.addEventListener('change', () => {
@@ -362,79 +336,103 @@
         });
       });
 
-      // 5. Add New Campaign Logic
-      const addCampaignForm = document.getElementById('addCampaignForm');
-      const campaignList = document.getElementById('campaignList');
-      const projectCountEl = document.getElementById('projectCount');
+      // 4. Telemetry Stream Simulator
+      const telemetryConsole = document.getElementById('telemetryConsole');
+      const logs = [
+        { msg: "SYSTEM: Satellite uplink synchronized successfully.", type: "info" },
+        { msg: "BUOY 1: Sighting coordinates verified near Whitsunday Islands.", type: "info" },
+        { msg: "BUOY 4: Salinity level normal at 35.1 PSU.", type: "info" },
+        { msg: "BUOY 2: Wave height detected at 1.4m. Wind SW 12kts.", type: "info" },
+        { msg: "SYSTEM: Backup database dump completed (4.2 MB).", type: "info" },
+        { msg: "BUOY 3: Battery capacity critical at 14%. Power-saver active.", type: "warn" },
+        { msg: "API: Inbound webhook verified from Stripe gateway.", type: "info" },
+        { msg: "BUOY 4: Water temp reading 26.4°C (Normal reef state).", type: "info" },
+        { msg: "BUOY 1: Acoustic hydrophone registered dolphin clicks.", type: "info" },
+        { msg: "SYSTEM: Intake database sync complete.", type: "info" }
+      ];
 
-      if (addCampaignForm) {
-        addCampaignForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          const name = document.getElementById('newCampaignName').value;
-          const loc = document.getElementById('newCampaignLoc').value;
+      const writeConsoleLine = (text, type = 'info') => {
+        if (!telemetryConsole) return;
+        const now = new Date();
+        const timeStr = now.toTimeString().split(' ')[0];
+        
+        const line = document.createElement('div');
+        line.className = 'console-line';
+        
+        const timestamp = document.createElement('span');
+        timestamp.className = 'console-line-timestamp';
+        timestamp.innerText = `[${timeStr}]`;
+        
+        const content = document.createElement('span');
+        content.className = type === 'warn' ? 'console-line-warn' : 'console-line-info';
+        content.innerText = ` ${text}`;
+        
+        line.appendChild(timestamp);
+        line.appendChild(content);
+        
+        telemetryConsole.appendChild(line);
+        telemetryConsole.scrollTop = telemetryConsole.scrollHeight;
+      };
 
-          // Create new campaign item HTML
-          const newItem = document.createElement('div');
-          newItem.className = 'glass-light';
-          newItem.style.padding = '16px';
-          newItem.style.borderRadius = '8px';
-          newItem.style.display = 'flex';
-          newItem.style.justifyContent = 'space-between';
-          newItem.style.alignItems = 'center';
-          newItem.innerHTML = `
-            <div>
-              <h4 style="font-weight:700; color:var(--white);">${name}</h4>
-              <p style="font-size:0.8rem; color:var(--text-muted);">${loc}</p>
-            </div>
-            <span style="background:rgba(42, 157, 143, 0.15); color:var(--sea-green); padding:4px 8px; border-radius:12px; font-size:0.75rem; font-weight:600;">ACTIVE</span>
-          `;
+      // Initial lines
+      writeConsoleLine("SYSTEM: Initializing telemetry logging module...", "info");
+      setTimeout(() => writeConsoleLine("SYSTEM: Connecting to online tracking sensors...", "info"), 800);
+      setTimeout(() => writeConsoleLine("SYSTEM: Telemetry link established on secure socket port 4833.", "info"), 1600);
+
+      // Periodically append log line
+      let logIndex = 0;
+      setInterval(() => {
+        const item = logs[logIndex];
+        writeConsoleLine(item.msg, item.type);
+        logIndex = (logIndex + 1) % logs.length;
+      }, 4000);
+
+      // 5. Ping Buoys Action
+      const pingBtns = document.querySelectorAll('.ping-buoy-btn');
+      pingBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const buoyNum = btn.getAttribute('data-buoy');
+          const latency = Math.floor(Math.random() * 25) + 12; // 12ms to 36ms
+          const signal = buoyNum === '3' ? 'Weak' : 'Excellent';
+          const type = buoyNum === '3' ? 'warn' : 'info';
           
-          campaignList.appendChild(newItem);
-          addCampaignForm.reset();
-
-          // Update project count
-          const currentCount = campaignList.children.length;
-          projectCountEl.innerText = `${currentCount} Projects`;
-
-          showToast(`Created listing: "${name}"`);
+          writeConsoleLine(`SYSTEM: Ping command issued to Buoy #${buoyNum}...`, 'info');
+          setTimeout(() => {
+            writeConsoleLine(`BUOY ${buoyNum}: Ping back received. Latency: ${latency}ms | Signal: ${signal}`, type);
+            showToast(`Node #${buoyNum} Pinged successfully!`);
+          }, 300);
         });
-      }
+      });
 
-      // 6. Approve / Reject Volunteers Actions
-      const volunteerTableBody = document.getElementById('volunteerTableBody');
-      const totalVolunteersCountEl = document.getElementById('totalVolunteersCount');
-
-      if (volunteerTableBody) {
-        volunteerTableBody.addEventListener('click', (e) => {
-          const row = e.target.closest('.volunteer-row');
-          if (!row) return;
-
-          const name = row.cells[0].innerText;
-          const statusBadge = row.querySelector('.v-status');
-
-          if (e.target.classList.contains('approve-btn')) {
-            statusBadge.innerText = 'APPROVED';
-            statusBadge.style.background = 'rgba(16, 185, 129, 0.15)';
-            statusBadge.style.color = '#10B981';
-            
-            // Remove actions
-            e.target.parentElement.innerHTML = `<span style="color:var(--text-muted); font-size:0.8rem;"><i data-lucide="check" style="width:16px; height:16px; vertical-align:-3px; stroke:#10B981;"></i> Approved</span>`;
-            if (typeof lucide !== 'undefined') lucide.createIcons();
-            
-            showToast(`Approved Volunteer: ${name}`);
-          } else if (e.target.classList.contains('reject-btn')) {
-            statusBadge.innerText = 'REJECTED';
-            statusBadge.style.background = 'rgba(239, 68, 68, 0.15)';
-            statusBadge.style.color = '#EF4444';
-            
-            // Remove actions
-            e.target.parentElement.innerHTML = `<span style="color:var(--text-muted); font-size:0.8rem;"><i data-lucide="x" style="width:16px; height:16px; vertical-align:-3px; stroke:#EF4444;"></i> Rejected</span>`;
-            if (typeof lucide !== 'undefined') lucide.createIcons();
-
-            showToast(`Rejected Volunteer: ${name}`);
+      // 6. Action Toolset buttons
+      const actionBtns = document.querySelectorAll('.alert-action-btn');
+      actionBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const action = btn.getAttribute('data-action');
+          if (action === 'emergency') {
+            writeConsoleLine(`SYSTEM: ALERT! Broadcasting emergency alert notifications to Coral Sea network!`, 'warn');
+            showToast("Emergency Alert Broadcasted!");
+          } else if (action === 'sync') {
+            writeConsoleLine(`SYSTEM: Forcing remote satellite database synchronization...`, 'info');
+            setTimeout(() => {
+              writeConsoleLine(`SYSTEM: Database sync complete. 48 buoy telemetry logs updated.`, 'info');
+              showToast("Satellite Sync Completed!");
+            }, 600);
+          } else if (action === 'backup') {
+            writeConsoleLine(`SYSTEM: Requesting secure database backup payload...`, 'info');
+            setTimeout(() => {
+              writeConsoleLine(`SYSTEM: Backup payload packaged (5.4MB). Saved on secure port 4833.`, 'info');
+              showToast("System Backup Packaged!");
+            }, 800);
+          } else if (action === 'purge') {
+            if (telemetryConsole) {
+              telemetryConsole.innerHTML = '';
+            }
+            writeConsoleLine(`SYSTEM: Telemetry streaming console logs purged successfully.`, 'info');
+            showToast("Console logs cleared!");
           }
         });
-      }
+      });
 
       // 7. Logout handler
       const logoutLink = document.getElementById('logoutLink');

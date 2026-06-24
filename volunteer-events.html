@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer Events | Marine Conservation</title>
+  
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="./css/style.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dashboard-body" style="background-color: #01050e;">
+
+  <!-- Floating bubbles background -->
+  <div id="bubble-container"></div>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-logo" style="margin-bottom: 30px;">
+        <a href="./index.html" style="display:flex; align-items:center; justify-content:center;">
+          <img src="./assets/webp/logo.webp" alt="Marine Portal" style="height: 40px; width: auto; display: block;">
+        </a>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="sidebar-menu-item" id="menuOverview">
+          <a href="./customerdashboard.html"><i data-lucide="layout-dashboard" style="width:18px; height:18px;"></i> Overview</a>
+        </li>
+        <li class="sidebar-menu-item" id="menuBookmarks">
+          <a href="./bookmarks.html"><i data-lucide="bookmark" style="width:18px; height:18px;"></i> Bookmarks</a>
+        </li>
+        <li class="sidebar-menu-item active" id="menuEvents">
+          <a href="./volunteer-events.html"><i data-lucide="calendar" style="width:18px; height:18px;"></i> Volunteer Events</a>
+        </li>
+        <li class="sidebar-menu-item" id="menuSettings">
+          <a href="./alert-settings.html"><i data-lucide="settings" style="width:18px; height:18px;"></i> Alert Settings</a>
+        </li>
+      </ul>
+      <div class="sidebar-logout">
+        <a href="#" id="logoutLink"><i data-lucide="log-out" style="width:18px; height:18px;"></i> Logout</a>
+      </div>
+    </aside>
+
+    <!-- Mobile Header -->
+    <div class="mobile-dashboard-header">
+      <div class="sidebar-logo" style="margin-bottom: 0;">
+        <a href="./index.html" style="display:flex; align-items:center;">
+          <img src="./assets/webp/logo.webp" alt="Marine Portal" style="height: 30px; width: auto;">
+        </a>
+      </div>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+
+    <!-- Sidebar Overlay for mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Dashboard Area -->
+    <main class="dashboard-main">
+      <!-- Simple Subpage Header -->
+      <div class="subpage-header fade-in-up-anim">
+        <span class="subpage-breadcrumb">Volunteer / Campaign Events</span>
+        <h1 class="subpage-title letter-reveal-trigger">Campaign Events</h1>
+      </div>
+
+      <!-- Main Dashboard Content Grid -->
+      <div class="dashboard-grid">
+        
+        <!-- Interactive Panels (Toggle visible based on active tab) -->
+        <div id="panelContainer" style="display:flex; flex-direction:column; gap:24px;">
+          
+          <!-- PANEL 3: EVENTS -->
+          <div class="dashboard-panel glass tab-panel" id="panelEvents" style="display:block;">
+            <div class="dashboard-panel-header" style="margin-bottom: 20px;">
+              <h2 class="dashboard-panel-title">Enrolled Campaigns</h2>
+            </div>
+            <div style="overflow-x:auto; margin-bottom: 30px;">
+              <table style="width:100%; border-collapse:collapse; text-align:left; min-width:400px;">
+                <thead>
+                  <tr style="border-bottom:1px solid rgba(255,255,255,0.1); color:var(--text-muted); font-size:0.85rem;">
+                    <th style="padding:12px 8px;">CAMPAIGN EVENT</th>
+                    <th style="padding:12px 8px;">DATE</th>
+                    <th style="padding:12px 8px;">STATUS</th>
+                  </tr>
+                </thead>
+                <tbody id="enrolledTableBody">
+                  <tr style="border-bottom:1px solid rgba(255,255,255,0.05); font-size:0.9rem;">
+                    <td style="padding:16px 8px; font-weight:600; color:var(--white);">Coral Restoration Reef Planting</td>
+                    <td style="padding:16px 8px; color:var(--text-muted);">June 28, 2026</td>
+                    <td style="padding:16px 8px;"><span style="background:rgba(16, 185, 129, 0.15); color:#10B981; padding:4px 8px; border-radius:12px; font-size:0.75rem; font-weight:600;">CONFIRMED</span></td>
+                  </tr>
+                  <tr style="border-bottom:1px solid rgba(255,255,255,0.05); font-size:0.9rem;">
+                    <td style="padding:16px 8px; font-weight:600; color:var(--white);">Ocean Plastic Beach Cleanup</td>
+                    <td style="padding:16px 8px; color:var(--text-muted);">July 12, 2026</td>
+                    <td style="padding:16px 8px;"><span style="background:rgba(59, 130, 246, 0.15); color:#3B82F6; padding:4px 8px; border-radius:12px; font-size:0.75rem; font-weight:600;">IN PROGRESS</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Discover Upcoming Campaigns Section -->
+            <div style="border-top:1px solid rgba(255,255,255,0.05); padding-top:25px;">
+              <h3 style="font-family:var(--font-heading); font-size:1.2rem; font-weight:700; margin-bottom:20px; color:var(--white);">Discover Upcoming Campaigns</h3>
+              <div style="display:flex; flex-direction:column; gap:16px;" id="discoverCampaignsList">
+                <!-- Campaign 1 -->
+                <div class="glass-light campaign-discover-card" style="padding:16px; border-radius:10px; display:flex; justify-content:space-between; align-items:center;" data-event="Great Barrier Reef Coral Survey" data-date="July 20, 2026">
+                  <div>
+                    <h4 style="font-weight:700; color:var(--white); font-size:0.95rem;">Great Barrier Reef Coral Survey</h4>
+                    <p style="font-size:0.8rem; color:var(--text-muted);"><i data-lucide="calendar" style="width:12px; height:12px; vertical-align:-2px; margin-right:4px;"></i> July 20, 2026 | Queensland, Australia</p>
+                  </div>
+                  <button class="btn btn-primary enroll-btn" style="padding:6px 14px; font-size:0.8rem; border-radius:6px;" data-event="Great Barrier Reef Coral Survey" data-date="July 20, 2026">Enroll Now</button>
+                </div>
+                <!-- Campaign 2 -->
+                <div class="glass-light campaign-discover-card" style="padding:16px; border-radius:10px; display:flex; justify-content:space-between; align-items:center;" data-event="Mangled Net Deep Sea Recovery" data-date="August 5, 2026">
+                  <div>
+                    <h4 style="font-weight:700; color:var(--white); font-size:0.95rem;">Mangled Net Deep Sea Recovery</h4>
+                    <p style="font-size:0.8rem; color:var(--text-muted);"><i data-lucide="calendar" style="width:12px; height:12px; vertical-align:-2px; margin-right:4px;"></i> August 5, 2026 | Cornwall, UK</p>
+                  </div>
+                  <button class="btn btn-primary enroll-btn" style="padding:6px 14px; font-size:0.8rem; border-radius:6px;" data-event="Mangled Net Deep Sea Recovery" data-date="August 5, 2026">Enroll Now</button>
+                </div>
+                <!-- Campaign 3 -->
+                <div class="glass-light campaign-discover-card" style="padding:16px; border-radius:10px; display:flex; justify-content:space-between; align-items:center;" data-event="Coastal Estuary Mangrove Planting" data-date="August 18, 2026">
+                  <div>
+                    <h4 style="font-weight:700; color:var(--white); font-size:0.95rem;">Coastal Estuary Mangrove Planting</h4>
+                    <p style="font-size:0.8rem; color:var(--text-muted);"><i data-lucide="calendar" style="width:12px; height:12px; vertical-align:-2px; margin-right:4px;"></i> August 18, 2026 | Maui, Hawaii</p>
+                  </div>
+                  <button class="btn btn-primary enroll-btn" style="padding:6px 14px; font-size:0.8rem; border-radius:6px;" data-event="Coastal Estuary Mangrove Planting" data-date="August 18, 2026">Enroll Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN: System Status & Activity -->
+        <div style="display:flex; flex-direction:column; gap:24px; align-self: flex-start;" class="reveal-right active">
+          <!-- Active Badges -->
+          <div class="dashboard-panel glass" style="width:100%;">
+            <div class="dashboard-panel-header">
+              <h2 class="dashboard-panel-title">Active Badges</h2>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div style="background-color: rgba(255,255,255,0.02); border-left: 4px solid var(--accent); padding: 16px; border-radius: 4px;">
+                <h4 style="font-weight:600; font-size:0.9rem; margin-bottom:0.25rem; color:var(--white);"><i data-lucide="shield-check" style="width:16px; height:16px; vertical-align:-3px; stroke:var(--accent);"></i> Reef Defender Badge</h4>
+                <p style="font-size:0.8rem; color:var(--text-muted);">Unlocked by attending 2 coral reef planting workshops.</p>
+              </div>
+
+              <div style="background-color: rgba(255,255,255,0.02); border-left: 4px solid var(--sea-green); padding: 16px; border-radius: 4px;">
+                <h4 style="font-weight:600; font-size:0.9rem; margin-bottom:0.25rem; color:var(--white);"><i data-lucide="droplet" style="width:16px; height:16px; vertical-align:-3px; stroke:var(--sea-green);"></i> Pure Aqua Star</h4>
+                <p style="font-size:0.8rem; color:var(--text-muted);">Unlocked by registering 10kg of beach plastic removed.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Achievements Tracker (Custom Animations Showcase) -->
+          <div class="dashboard-panel glass fade-in-up-anim" style="width:100%; animation-delay: 0.2s;">
+            <div class="dashboard-panel-header">
+              <h2 class="dashboard-panel-title scramble-trigger" data-scramble="ACHIEVEMENTS">ACHIEVEMENTS</h2>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:15px;">
+              <div>
+                <h4 class="scramble-trigger" data-scramble="ANNUAL HOURS TARGET" style="font-family:var(--font-heading); font-weight:800; font-size:1.1rem; color:var(--accent); margin:0 0 5px;">ANNUAL HOURS TARGET</h4>
+                <p class="text-mask-reveal" style="font-size:0.8rem; color:var(--text-muted); margin:0;">Contribute hours towards marine safety and reef replenishment projects.</p>
+              </div>
+              <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top:12px;">
+                <div class="gradient-flow-text letter-reveal-trigger" style="font-weight:700; font-size:0.95rem; margin-bottom:6px;">Total Hours Logged: 12.5</div>
+                <br>
+                <div class="text-fill-anim" style="font-weight:800; font-size:1.15rem;">HOURS GOAL: 62%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Session check
+      if (localStorage.getItem('stackly_logged_in') !== 'true') {
+        window.location.replace('login.html');
+      }
+
+      // 2. Display registration info
+      const registeredName = localStorage.getItem('stackly_registered_name') || 'Volunteer Advocate';
+      const registeredEmail = localStorage.getItem('stackly_user_email') || 'volunteer@conservation.org';
+      
+      const welcomeUser = document.getElementById('welcomeUser');
+      const usernameDisplay = document.getElementById('usernameDisplay');
+      const avatarName = document.getElementById('avatarName');
+
+      if (welcomeUser) welcomeUser.innerText = `Welcome Back, ${registeredName}`;
+      if (usernameDisplay) usernameDisplay.innerText = registeredEmail;
+      if (avatarName) {
+        const initials = registeredName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+        avatarName.innerText = initials || 'V';
+      }
+
+      // 3. Campaign Enrollment
+      const enrolledTableBody = document.getElementById('enrolledTableBody');
+      const discoverCampaignsList = document.getElementById('discoverCampaignsList');
+      const enrolledCountEl = document.getElementById('enrolledCount');
+      const hoursCountEl = document.getElementById('hoursCount');
+
+      const updateEnrolledCount = () => {
+        const totalRows = enrolledTableBody.querySelectorAll('tr').length;
+        if (enrolledCountEl) enrolledCountEl.innerText = `${totalRows} Campaigns`;
+      };
+
+      if (discoverCampaignsList) {
+        discoverCampaignsList.addEventListener('click', (e) => {
+          const btn = e.target.closest('.enroll-btn');
+          if (!btn) return;
+
+          const card = btn.closest('.campaign-discover-card');
+          const eventName = btn.getAttribute('data-event');
+          const date = btn.getAttribute('data-date');
+
+          card.classList.add('card-removed');
+          setTimeout(() => {
+            card.remove();
+
+            // Create new table row
+            const newRow = document.createElement('tr');
+            newRow.className = 'row-added';
+            newRow.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
+            newRow.style.fontSize = '0.9rem';
+            newRow.innerHTML = `
+              <td style="padding:16px 8px; font-weight:600; color:var(--white);">${eventName}</td>
+              <td style="padding:16px 8px; color:var(--text-muted);">${date}</td>
+              <td style="padding:16px 8px;"><span style="background:rgba(16, 185, 129, 0.15); color:#10B981; padding:4px 8px; border-radius:12px; font-size:0.75rem; font-weight:600;">CONFIRMED</span></td>
+            `;
+
+            enrolledTableBody.appendChild(newRow);
+            updateEnrolledCount();
+
+            // Update hours count mock increase
+            if (hoursCountEl) {
+              const currentHours = parseFloat(hoursCountEl.innerText);
+              const updatedHours = currentHours + 4.0;
+              hoursCountEl.innerText = `${updatedHours.toFixed(1)} Hrs`;
+            }
+
+            showToast(`Successfully enrolled in ${eventName}!`);
+          }, 300);
+        });
+      }
+
+      // 4. Logout handler
+      const logoutLink = document.getElementById('logoutLink');
+      if (logoutLink) {
+        logoutLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          localStorage.removeItem('stackly_logged_in');
+          localStorage.removeItem('stackly_user_role');
+          localStorage.removeItem('stackly_user_email');
+          window.location.replace('login.html');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

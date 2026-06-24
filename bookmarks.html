@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookmarks | Marine Conservation</title>
+  
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="./css/style.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dashboard-body" style="background-color: #01050e;">
+
+  <!-- Floating bubbles background -->
+  <div id="bubble-container"></div>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-logo" style="margin-bottom: 30px;">
+        <a href="./index.html" style="display:flex; align-items:center; justify-content:center;">
+          <img src="./assets/webp/logo.webp" alt="Marine Portal" style="height: 40px; width: auto; display: block;">
+        </a>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="sidebar-menu-item" id="menuOverview">
+          <a href="./customerdashboard.html"><i data-lucide="layout-dashboard" style="width:18px; height:18px;"></i> Overview</a>
+        </li>
+        <li class="sidebar-menu-item active" id="menuBookmarks">
+          <a href="./bookmarks.html"><i data-lucide="bookmark" style="width:18px; height:18px;"></i> Bookmarks</a>
+        </li>
+        <li class="sidebar-menu-item" id="menuEvents">
+          <a href="./volunteer-events.html"><i data-lucide="calendar" style="width:18px; height:18px;"></i> Volunteer Events</a>
+        </li>
+        <li class="sidebar-menu-item" id="menuSettings">
+          <a href="./alert-settings.html"><i data-lucide="settings" style="width:18px; height:18px;"></i> Alert Settings</a>
+        </li>
+      </ul>
+      <div class="sidebar-logout">
+        <a href="#" id="logoutLink"><i data-lucide="log-out" style="width:18px; height:18px;"></i> Logout</a>
+      </div>
+    </aside>
+
+    <!-- Mobile Header -->
+    <div class="mobile-dashboard-header">
+      <div class="sidebar-logo" style="margin-bottom: 0;">
+        <a href="./index.html" style="display:flex; align-items:center;">
+          <img src="./assets/webp/logo.webp" alt="Marine Portal" style="height: 30px; width: auto;">
+        </a>
+      </div>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+
+    <!-- Sidebar Overlay for mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Dashboard Area -->
+    <main class="dashboard-main">
+      <!-- Simple Subpage Header -->
+      <div class="subpage-header fade-in-up-anim">
+        <span class="subpage-breadcrumb">Volunteer / Species Bookmarks</span>
+        <h1 class="subpage-title letter-reveal-trigger">Marine Species Bookmarks</h1>
+      </div>
+
+      <!-- Main Dashboard Content Grid -->
+      <div class="dashboard-grid">
+        
+        <!-- Interactive Panels (Toggle visible based on active tab) -->
+        <div id="panelContainer" style="display:flex; flex-direction:column; gap:24px;">
+          
+          <!-- PANEL 2: BOOKMARKS -->
+          <div class="dashboard-panel glass tab-panel" id="panelBookmarks" style="display:block;">
+            <div class="dashboard-panel-header" style="margin-bottom: 15px;">
+              <h2 class="dashboard-panel-title">My Bookmarked Species</h2>
+            </div>
+
+            <!-- Search input bar -->
+            <div class="search-wrapper">
+              <i data-lucide="search" class="search-icon"></i>
+              <input type="text" id="speciesSearch" class="search-input" placeholder="Search bookmarked or recommended species...">
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:20px; margin-bottom: 30px;" id="bookmarksList">
+              <!-- Bookmarked Species 1 -->
+              <div class="glass-light bookmark-card" style="padding:20px; border-radius:12px; display:flex; flex-direction:column; gap:12px;" data-species="Hawksbill Sea Turtle" data-status="Critically Endangered">
+                <div style="font-weight:700; color:var(--white); font-family:var(--font-heading); font-size:1.1rem;" class="species-title">Hawksbill Sea Turtle</div>
+                <div style="font-size:0.8rem; color:var(--accent); text-transform:uppercase; font-weight:600;">Critically Endangered</div>
+                <button class="btn btn-secondary remove-bookmark" style="padding:6px 12px; font-size:0.8rem; border-radius:6px;" data-species="Hawksbill Sea Turtle" data-status="Critically Endangered">Remove</button>
+              </div>
+
+              <!-- Bookmarked Species 2 -->
+              <div class="glass-light bookmark-card" style="padding:20px; border-radius:12px; display:flex; flex-direction:column; gap:12px;" data-species="Blue Whale" data-status="Endangered">
+                <div style="font-weight:700; color:var(--white); font-family:var(--font-heading); font-size:1.1rem;" class="species-title">Blue Whale</div>
+                <div style="font-size:0.8rem; color:#f59e0b; text-transform:uppercase; font-weight:600;">Endangered</div>
+                <button class="btn btn-secondary remove-bookmark" style="padding:6px 12px; font-size:0.8rem; border-radius:6px;" data-species="Blue Whale" data-status="Endangered">Remove</button>
+              </div>
+
+              <!-- Bookmarked Species 3 -->
+              <div class="glass-light bookmark-card" style="padding:20px; border-radius:12px; display:flex; flex-direction:column; gap:12px;" data-species="Spinner Dolphin" data-status="Least Concern">
+                <div style="font-weight:700; color:var(--white); font-family:var(--font-heading); font-size:1.1rem;" class="species-title">Spinner Dolphin</div>
+                <div style="font-size:0.8rem; color:var(--sea-green); text-transform:uppercase; font-weight:600;">Least Concern</div>
+                <button class="btn btn-secondary remove-bookmark" style="padding:6px 12px; font-size:0.8rem; border-radius:6px;" data-species="Spinner Dolphin" data-status="Least Concern">Remove</button>
+              </div>
+            </div>
+
+            <!-- Recommended Species Section -->
+            <div style="border-top:1px solid rgba(255,255,255,0.05); padding-top:25px;">
+              <h3 style="font-family:var(--font-heading); font-size:1.2rem; font-weight:700; margin-bottom:15px; color:var(--white);">Recommended Species to Track</h3>
+              <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:20px;" id="recommendedList">
+                <!-- Card 1 -->
+                <div class="glass-light recommended-card" style="padding:20px; border-radius:12px; display:flex; flex-direction:column; gap:12px;" data-species="Great White Shark" data-status="Vulnerable">
+                  <div style="font-weight:700; color:var(--white); font-family:var(--font-heading); font-size:1.1rem;" class="species-title">Great White Shark</div>
+                  <div style="font-size:0.8rem; color:#f59e0b; text-transform:uppercase; font-weight:600;">Vulnerable</div>
+                  <button class="btn btn-primary add-bookmark-btn" style="padding:6px 12px; font-size:0.8rem; border-radius:6px;" data-species="Great White Shark" data-status="Vulnerable">Add Bookmark</button>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-light recommended-card" style="padding:20px; border-radius:12px; display:flex; flex-direction:column; gap:12px;" data-species="Dugong" data-status="Vulnerable">
+                  <div style="font-weight:700; color:var(--white); font-family:var(--font-heading); font-size:1.1rem;" class="species-title">Dugong</div>
+                  <div style="font-size:0.8rem; color:#f59e0b; text-transform:uppercase; font-weight:600;">Vulnerable</div>
+                  <button class="btn btn-primary add-bookmark-btn" style="padding:6px 12px; font-size:0.8rem; border-radius:6px;" data-species="Dugong" data-status="Vulnerable">Add Bookmark</button>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass-light recommended-card" style="padding:20px; border-radius:12px; display:flex; flex-direction:column; gap:12px;" data-species="Green Sea Turtle" data-status="Endangered">
+                  <div style="font-weight:700; color:var(--white); font-family:var(--font-heading); font-size:1.1rem;" class="species-title">Green Sea Turtle</div>
+                  <div style="font-size:0.8rem; color:#ef4444; text-transform:uppercase; font-weight:600;">Endangered</div>
+                  <button class="btn btn-primary add-bookmark-btn" style="padding:6px 12px; font-size:0.8rem; border-radius:6px;" data-species="Green Sea Turtle" data-status="Endangered">Add Bookmark</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN: System Status & Activity -->
+        <div style="display:flex; flex-direction:column; gap:24px; align-self: flex-start;" class="reveal-right active">
+          <!-- Active Badges -->
+          <div class="dashboard-panel glass" style="width:100%;">
+            <div class="dashboard-panel-header">
+              <h2 class="dashboard-panel-title">Active Badges</h2>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div style="background-color: rgba(255,255,255,0.02); border-left: 4px solid var(--accent); padding: 16px; border-radius: 4px;">
+                <h4 style="font-weight:600; font-size:0.9rem; margin-bottom:0.25rem; color:var(--white);"><i data-lucide="shield-check" style="width:16px; height:16px; vertical-align:-3px; stroke:var(--accent);"></i> Reef Defender Badge</h4>
+                <p style="font-size:0.8rem; color:var(--text-muted);">Unlocked by attending 2 coral reef planting workshops.</p>
+              </div>
+
+              <div style="background-color: rgba(255,255,255,0.02); border-left: 4px solid var(--sea-green); padding: 16px; border-radius: 4px;">
+                <h4 style="font-weight:600; font-size:0.9rem; margin-bottom:0.25rem; color:var(--white);"><i data-lucide="droplet" style="width:16px; height:16px; vertical-align:-3px; stroke:var(--sea-green);"></i> Pure Aqua Star</h4>
+                <p style="font-size:0.8rem; color:var(--text-muted);">Unlocked by registering 10kg of beach plastic removed.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Eco Spotlight Tracker (Custom Animations Showcase) -->
+          <div class="dashboard-panel glass fade-in-up-anim" style="width:100%; animation-delay: 0.2s;">
+            <div class="dashboard-panel-header">
+              <h2 class="dashboard-panel-title scramble-trigger" data-scramble="ECO SPOTLIGHT">ECO SPOTLIGHT</h2>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:15px;">
+              <div>
+                <h4 class="scramble-trigger" data-scramble="OCEAN SENTINELS" style="font-family:var(--font-heading); font-weight:800; font-size:1.1rem; color:var(--accent); margin:0 0 5px;">OCEAN SENTINELS</h4>
+                <p class="text-mask-reveal" style="font-size:0.8rem; color:var(--text-muted); margin:0;">Protecting marine life, preserving reefs, and working towards clean seas.</p>
+              </div>
+              <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top:12px;">
+                <div class="gradient-flow-text letter-reveal-trigger" style="font-weight:700; font-size:0.95rem; margin-bottom:6px;">Active Species tracked: 3</div>
+                <br>
+                <div class="text-fill-anim" style="font-weight:800; font-size:1.15rem;">TARGET SAVED: 95%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Session check
+      if (localStorage.getItem('stackly_logged_in') !== 'true') {
+        window.location.replace('login.html');
+      }
+
+      // 2. Display registration info
+      const registeredName = localStorage.getItem('stackly_registered_name') || 'Volunteer Advocate';
+      const registeredEmail = localStorage.getItem('stackly_user_email') || 'volunteer@conservation.org';
+      
+      const welcomeUser = document.getElementById('welcomeUser');
+      const usernameDisplay = document.getElementById('usernameDisplay');
+      const avatarName = document.getElementById('avatarName');
+
+      if (welcomeUser) welcomeUser.innerText = `Welcome Back, ${registeredName}`;
+      if (usernameDisplay) usernameDisplay.innerText = registeredEmail;
+      if (avatarName) {
+        const initials = registeredName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+        avatarName.innerText = initials || 'V';
+      }
+
+      // 3. Species Bookmark Management
+      const bookmarksList = document.getElementById('bookmarksList');
+      const recommendedList = document.getElementById('recommendedList');
+      const bookmarkCountEl = document.getElementById('bookmarkCount');
+      const speciesSearch = document.getElementById('speciesSearch');
+
+      // Update the count card value
+      const updateBookmarkCount = () => {
+        const remaining = bookmarksList.querySelectorAll('.bookmark-card').length;
+        if (bookmarkCountEl) bookmarkCountEl.innerText = `${remaining} Species`;
+      };
+
+      // Search species filter
+      if (speciesSearch) {
+        speciesSearch.addEventListener('input', () => {
+          const query = speciesSearch.value.toLowerCase().trim();
+          
+          // Filter bookmarks
+          bookmarksList.querySelectorAll('.bookmark-card').forEach(card => {
+            const name = card.getAttribute('data-species').toLowerCase();
+            const status = card.getAttribute('data-status').toLowerCase();
+            if (name.includes(query) || status.includes(query)) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          // Filter recommended
+          recommendedList.querySelectorAll('.recommended-card').forEach(card => {
+            const name = card.getAttribute('data-species').toLowerCase();
+            const status = card.getAttribute('data-status').toLowerCase();
+            if (name.includes(query) || status.includes(query)) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      }
+
+      // Add Bookmark Handler
+      recommendedList.addEventListener('click', (e) => {
+        const btn = e.target.closest('.add-bookmark-btn');
+        if (!btn) return;
+
+        const card = btn.closest('.recommended-card');
+        const speciesName = btn.getAttribute('data-species');
+        const status = btn.getAttribute('data-status');
+
+        // Color mapping for badges
+        let colorClass = 'var(--sea-green)';
+        if (status === 'Critically Endangered') colorClass = 'var(--accent)';
+        else if (status === 'Endangered') colorClass = '#ef4444';
+        else if (status === 'Vulnerable') colorClass = '#f59e0b';
+
+        // Animate remove from recommended list
+        card.classList.add('card-removed');
+        setTimeout(() => {
+          card.remove();
+
+          // Create new bookmark card HTML
+          const newBookmark = document.createElement('div');
+          newBookmark.className = 'glass-light bookmark-card card-added';
+          newBookmark.style.padding = '20px';
+          newBookmark.style.borderRadius = '12px';
+          newBookmark.style.display = 'flex';
+          newBookmark.style.flexDirection = 'column';
+          newBookmark.style.gap = '12px';
+          newBookmark.setAttribute('data-species', speciesName);
+          newBookmark.setAttribute('data-status', status);
+          newBookmark.innerHTML = `
+            <div style="font-weight:700; color:var(--white); font-family:var(--font-heading); font-size:1.1rem;" class="species-title">${speciesName}</div>
+            <div style="font-size:0.8rem; color:${colorClass}; text-transform:uppercase; font-weight:600;">${status}</div>
+            <button class="btn btn-secondary remove-bookmark" style="padding:6px 12px; font-size:0.8rem; border-radius:6px;" data-species="${speciesName}" data-status="${status}">Remove</button>
+          `;
+
+          bookmarksList.appendChild(newBookmark);
+          updateBookmarkCount();
+          showToast(`Bookmarked ${speciesName}`);
+        }, 300);
+      });
+
+      // Remove Bookmark Handler
+      bookmarksList.addEventListener('click', (e) => {
+        const btn = e.target.closest('.remove-bookmark');
+        if (!btn) return;
+
+        const card = btn.closest('.bookmark-card');
+        const speciesName = btn.getAttribute('data-species');
+        const status = btn.getAttribute('data-status');
+
+        // Color mapping for recommended badge
+        let colorClass = 'var(--sea-green)';
+        if (status === 'Critically Endangered') colorClass = 'var(--accent)';
+        else if (status === 'Endangered') colorClass = '#ef4444';
+        else if (status === 'Vulnerable') colorClass = '#f59e0b';
+
+        card.classList.add('card-removed');
+        setTimeout(() => {
+          card.remove();
+
+          // Put back in recommended list
+          const newRecommended = document.createElement('div');
+          newRecommended.className = 'glass-light recommended-card card-added';
+          newRecommended.style.padding = '20px';
+          newRecommended.style.borderRadius = '12px';
+          newRecommended.style.display = 'flex';
+          newRecommended.style.flexDirection = 'column';
+          newRecommended.style.gap = '12px';
+          newRecommended.setAttribute('data-species', speciesName);
+          newRecommended.setAttribute('data-status', status);
+          newRecommended.innerHTML = `
+            <div style="font-weight:700; color:var(--white); font-family:var(--font-heading); font-size:1.1rem;" class="species-title">${speciesName}</div>
+            <div style="font-size:0.8rem; color:${colorClass}; text-transform:uppercase; font-weight:600;">${status}</div>
+            <button class="btn btn-primary add-bookmark-btn" style="padding:6px 12px; font-size:0.8rem; border-radius:6px;" data-species="${speciesName}" data-status="${status}">Add Bookmark</button>
+          `;
+
+          recommendedList.appendChild(newRecommended);
+          updateBookmarkCount();
+          showToast(`Removed bookmark: ${speciesName}`);
+        }, 300);
+      });
+
+      // 4. Logout handler
+      const logoutLink = document.getElementById('logoutLink');
+      if (logoutLink) {
+        logoutLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          localStorage.removeItem('stackly_logged_in');
+          localStorage.removeItem('stackly_user_role');
+          localStorage.removeItem('stackly_user_email');
+          window.location.replace('login.html');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

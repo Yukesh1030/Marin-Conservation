@@ -26,16 +26,16 @@
       </div>
       <ul class="sidebar-menu">
         <li class="sidebar-menu-item active" id="menuOverview">
-          <a href="#" data-tab="overview"><i data-lucide="layout-dashboard" style="width:18px; height:18px;"></i> Overview</a>
+          <a href="./customerdashboard.html"><i data-lucide="layout-dashboard" style="width:18px; height:18px;"></i> Overview</a>
         </li>
         <li class="sidebar-menu-item" id="menuBookmarks">
-          <a href="#" data-tab="bookmarks"><i data-lucide="bookmark" style="width:18px; height:18px;"></i> Bookmarks</a>
+          <a href="./bookmarks.html"><i data-lucide="bookmark" style="width:18px; height:18px;"></i> Bookmarks</a>
         </li>
         <li class="sidebar-menu-item" id="menuEvents">
-          <a href="#" data-tab="events"><i data-lucide="calendar" style="width:18px; height:18px;"></i> Volunteer Events</a>
+          <a href="./volunteer-events.html"><i data-lucide="calendar" style="width:18px; height:18px;"></i> Volunteer Events</a>
         </li>
         <li class="sidebar-menu-item" id="menuSettings">
-          <a href="#" data-tab="settings"><i data-lucide="settings" style="width:18px; height:18px;"></i> Alert Settings</a>
+          <a href="./alert-settings.html"><i data-lucide="settings" style="width:18px; height:18px;"></i> Alert Settings</a>
         </li>
       </ul>
       <div class="sidebar-logout">
@@ -63,7 +63,7 @@
       <header class="dashboard-header">
         <div>
           <h1 style="font-family: var(--font-heading); font-size: 1.85rem; font-weight:800; color:var(--white);" id="welcomeUser">Welcome Back, Volunteer</h1>
-          <p style="color:var(--text-muted); font-size:0.95rem;">Your active conservation status and badges are up to date.</p>
+          <p style="color:var(--text-muted); font-size:0.95rem;" class="fade-in-up-anim">Your active conservation status and badges are up to date.</p>
         </div>
         <div class="dashboard-user-profile">
           <div class="dashboard-user-avatar" id="avatarName">V</div>
@@ -72,12 +72,12 @@
       </header>
 
       <!-- Quick Stats Row -->
-      <div class="dashboard-stats">
+      <div class="dashboard-stats fade-in-up-anim" style="animation-delay: 0.1s;">
         <div class="dashboard-stat-card glass">
           <div class="dashboard-stat-icon" style="background-color:rgba(0, 180, 216, 0.15); color:var(--accent);"><i data-lucide="bookmark"></i></div>
           <div class="dashboard-stat-info">
             <h3>Bookmarks</h3>
-            <div class="dashboard-stat-value" id="bookmarkCount">3 Species</div>
+            <div class="dashboard-stat-value gradient-flow-text" id="bookmarkCount">3 Species</div>
           </div>
         </div>
 
@@ -85,7 +85,7 @@
           <div class="dashboard-stat-icon" style="background-color:rgba(42, 157, 143, 0.15); color:var(--sea-green);"><i data-lucide="award"></i></div>
           <div class="dashboard-stat-info">
             <h3>Eco Points</h3>
-            <div class="dashboard-stat-value">350 Pts</div>
+            <div class="dashboard-stat-value text-fill-anim" style="animation-delay: 0.3s;">350 Pts</div>
           </div>
         </div>
 
@@ -93,7 +93,7 @@
           <div class="dashboard-stat-icon" style="background-color:rgba(255, 255, 255, 0.05); color:var(--sand);"><i data-lucide="calendar"></i></div>
           <div class="dashboard-stat-info">
             <h3>Events Enrolled</h3>
-            <div class="dashboard-stat-value">2 Campaigns</div>
+            <div class="dashboard-stat-value scramble-trigger" data-scramble="2 Campaigns">2 Campaigns</div>
           </div>
         </div>
 
@@ -101,7 +101,7 @@
           <div class="dashboard-stat-icon" style="background-color:rgba(2, 62, 138, 0.3); color:var(--primary);"><i data-lucide="clock"></i></div>
           <div class="dashboard-stat-info">
             <h3>Volunteer Hours</h3>
-            <div class="dashboard-stat-value">12.5 Hrs</div>
+            <div class="dashboard-stat-value text-mask-reveal" style="animation-delay: 0.5s;">12.5 Hrs</div>
           </div>
         </div>
       </div>
@@ -157,107 +157,60 @@
             </div>
           </div>
 
-          <!-- PANEL 2: BOOKMARKS -->
-          <div class="dashboard-panel glass tab-panel" id="panelBookmarks" style="display:none;">
-            <div class="dashboard-panel-header">
-              <h2 class="dashboard-panel-title">My Bookmarked Species</h2>
-            </div>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:20px;" id="bookmarksList">
-              <!-- Bookmarked Species 1 -->
-              <div class="glass-light" style="padding:20px; border-radius:12px; display:flex; flex-direction:column; gap:12px;">
-                <div style="font-weight:700; color:var(--white); font-family:var(--font-heading); font-size:1.1rem;">Hawksbill Sea Turtle</div>
-                <div style="font-size:0.8rem; color:var(--accent); text-transform:uppercase; font-weight:600;">Critically Endangered</div>
-                <button class="btn btn-secondary remove-bookmark" style="padding:6px 12px; font-size:0.8rem; border-radius:6px;" data-species="Hawksbill Sea Turtle">Remove</button>
-              </div>
-
-              <!-- Bookmarked Species 2 -->
-              <div class="glass-light" style="padding:20px; border-radius:12px; display:flex; flex-direction:column; gap:12px;">
-                <div style="font-weight:700; color:var(--white); font-family:var(--font-heading); font-size:1.1rem;">Blue Whale</div>
-                <div style="font-size:0.8rem; color:#f59e0b; text-transform:uppercase; font-weight:600;">Endangered</div>
-                <button class="btn btn-secondary remove-bookmark" style="padding:6px 12px; font-size:0.8rem; border-radius:6px;" data-species="Blue Whale">Remove</button>
-              </div>
-
-              <!-- Bookmarked Species 3 -->
-              <div class="glass-light" style="padding:20px; border-radius:12px; display:flex; flex-direction:column; gap:12px;">
-                <div style="font-weight:700; color:var(--white); font-family:var(--font-heading); font-size:1.1rem;">Spinner Dolphin</div>
-                <div style="font-size:0.8rem; color:var(--sea-green); text-transform:uppercase; font-weight:600;">Least Concern</div>
-                <button class="btn btn-secondary remove-bookmark" style="padding:6px 12px; font-size:0.8rem; border-radius:6px;" data-species="Spinner Dolphin">Remove</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- PANEL 3: EVENTS -->
-          <div class="dashboard-panel glass tab-panel" id="panelEvents" style="display:none;">
-            <div class="dashboard-panel-header">
-              <h2 class="dashboard-panel-title">Enrolled Campaigns</h2>
-            </div>
-            <div style="overflow-x:auto;">
-              <table style="width:100%; border-collapse:collapse; text-align:left; min-width:400px;">
-                <thead>
-                  <tr style="border-bottom:1px solid rgba(255,255,255,0.1); color:var(--text-muted); font-size:0.85rem;">
-                    <th style="padding:12px 8px;">CAMPAIGN EVENT</th>
-                    <th style="padding:12px 8px;">DATE</th>
-                    <th style="padding:12px 8px;">STATUS</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr style="border-bottom:1px solid rgba(255,255,255,0.05); font-size:0.9rem;">
-                    <td style="padding:16px 8px; font-weight:600; color:var(--white);">Coral Restoration Reef Planting</td>
-                    <td style="padding:16px 8px; color:var(--text-muted);">June 28, 2026</td>
-                    <td style="padding:16px 8px;"><span style="background:rgba(16, 185, 129, 0.15); color:#10B981; padding:4px 8px; border-radius:12px; font-size:0.75rem; font-weight:600;">CONFIRMED</span></td>
-                  </tr>
-                  <tr style="border-bottom:1px solid rgba(255,255,255,0.05); font-size:0.9rem;">
-                    <td style="padding:16px 8px; font-weight:600; color:var(--white);">Ocean Plastic Beach Cleanup</td>
-                    <td style="padding:16px 8px; color:var(--text-muted);">July 12, 2026</td>
-                    <td style="padding:16px 8px;"><span style="background:rgba(59, 130, 246, 0.15); color:#3B82F6; padding:4px 8px; border-radius:12px; font-size:0.75rem; font-weight:600;">IN PROGRESS</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- PANEL 4: SETTINGS -->
-          <div class="dashboard-panel glass tab-panel" id="panelSettings" style="display:none;">
-            <div class="dashboard-panel-header">
-              <h2 class="dashboard-panel-title">Notification Settings</h2>
-            </div>
-            <form id="settingsForm" style="display:flex; flex-direction:column; gap:20px;">
-              <div style="display:flex; flex-direction:column; gap:12px;">
-                <label style="display:flex; align-items:center; gap:10px; cursor:pointer;">
-                  <input type="checkbox" checked style="width:16px; height:16px; accent-color:var(--accent);"> Email alerts for upcoming cleanup campaigns
-                </label>
-                <label style="display:flex; align-items:center; gap:10px; cursor:pointer;">
-                  <input type="checkbox" checked style="width:16px; height:16px; accent-color:var(--accent);"> Monthly marine newsletter reports
-                </label>
-                <label style="display:flex; align-items:center; gap:10px; cursor:pointer;">
-                  <input type="checkbox" style="width:16px; height:16px; accent-color:var(--accent);"> SMS notifications for critical animal rescue calls
-                </label>
-              </div>
-              <button type="submit" class="btn btn-primary" style="align-self:flex-start; padding:10px 20px; font-size:0.9rem;">Save Preferences</button>
-            </form>
-          </div>
-
         </div>
 
         <!-- RIGHT COLUMN: System Status & Activity -->
-        <div class="dashboard-panel glass reveal-right active" style="align-self: flex-start;">
-          <div class="dashboard-panel-header">
-            <h2 class="dashboard-panel-title">Active Badges</h2>
+        <div style="display:flex; flex-direction:column; gap:24px; align-self: flex-start;" class="reveal-right active">
+          <!-- Active Badges -->
+          <div class="dashboard-panel glass" style="width: 100%;">
+            <div class="dashboard-panel-header">
+              <h2 class="dashboard-panel-title">Active Badges</h2>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div style="background-color: rgba(255,255,255,0.02); border-left: 4px solid var(--accent); padding: 16px; border-radius: 4px;">
+                <h4 style="font-weight:600; font-size:0.9rem; margin-bottom:0.25rem; color:var(--white);"><i data-lucide="shield-check" style="width:16px; height:16px; vertical-align:-3px; stroke:var(--accent);"></i> Reef Defender Badge</h4>
+                <p style="font-size:0.8rem; color:var(--text-muted);">Unlocked by attending 2 coral reef planting workshops.</p>
+              </div>
+
+              <div style="background-color: rgba(255,255,255,0.02); border-left: 4px solid var(--sea-green); padding: 16px; border-radius: 4px;">
+                <h4 style="font-weight:600; font-size:0.9rem; margin-bottom:0.25rem; color:var(--white);"><i data-lucide="droplet" style="width:16px; height:16px; vertical-align:-3px; stroke:var(--sea-green);"></i> Pure Aqua Star</h4>
+                <p style="font-size:0.8rem; color:var(--text-muted);">Unlocked by registering 10kg of beach plastic removed.</p>
+              </div>
+
+              <div style="background-color: rgba(255,255,255,0.02); border-left: 4px solid var(--sand); padding: 16px; border-radius: 4px;">
+                <h4 style="font-weight:600; font-size:0.9rem; margin-bottom:0.25rem; color:var(--white);"><i data-lucide="award" style="width:16px; height:16px; vertical-align:-3px; stroke:var(--sand);"></i> Eco Sentinel</h4>
+                <p style="font-size:0.8rem; color:var(--text-muted);">Unlocked for contributing 3 sighting reports of dolphins.</p>
+              </div>
+            </div>
           </div>
-          <div style="display:flex; flex-direction:column; gap:16px;">
-            <div style="background-color: rgba(255,255,255,0.02); border-left: 4px solid var(--accent); padding: 16px; border-radius: 4px;">
-              <h4 style="font-weight:600; font-size:0.9rem; margin-bottom:0.25rem; color:var(--white);"><i data-lucide="shield-check" style="width:16px; height:16px; vertical-align:-3px; stroke:var(--accent);"></i> Reef Defender Badge</h4>
-              <p style="font-size:0.8rem; color:var(--text-muted);">Unlocked by attending 2 coral reef planting workshops.</p>
-            </div>
 
-            <div style="background-color: rgba(255,255,255,0.02); border-left: 4px solid var(--sea-green); padding: 16px; border-radius: 4px;">
-              <h4 style="font-weight:600; font-size:0.9rem; margin-bottom:0.25rem; color:var(--white);"><i data-lucide="droplet" style="width:16px; height:16px; vertical-align:-3px; stroke:var(--sea-green);"></i> Pure Aqua Star</h4>
-              <p style="font-size:0.8rem; color:var(--text-muted);">Unlocked by registering 10kg of beach plastic removed.</p>
+          <!-- Recent Activity Log -->
+          <div class="dashboard-panel glass" style="width: 100%;">
+            <div class="dashboard-panel-header">
+              <h2 class="dashboard-panel-title">Recent Activity</h2>
             </div>
-
-            <div style="background-color: rgba(255,255,255,0.02); border-left: 4px solid var(--sand); padding: 16px; border-radius: 4px;">
-              <h4 style="font-weight:600; font-size:0.9rem; margin-bottom:0.25rem; color:var(--white);"><i data-lucide="award" style="width:16px; height:16px; vertical-align:-3px; stroke:var(--sand);"></i> Eco Sentinel</h4>
-              <p style="font-size:0.8rem; color:var(--text-muted);">Unlocked for contributing 3 sighting reports of dolphins.</p>
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div style="display:flex; gap:12px; align-items:center; font-size:0.85rem;">
+                <div style="color:var(--accent);"><i data-lucide="check-circle" style="width:16px; height:16px;"></i></div>
+                <div>
+                  <div style="font-weight:600; color:var(--white);">Enrolled in Estuary Cleanup</div>
+                  <div style="color:var(--text-muted); font-size:0.75rem;">2 hours ago</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:center; font-size:0.85rem;">
+                <div style="color:var(--sea-green);"><i data-lucide="award" style="width:16px; height:16px;"></i></div>
+                <div>
+                  <div style="font-weight:600; color:var(--white);">Earned +50 Eco Points</div>
+                  <div style="color:var(--text-muted); font-size:0.75rem;">Yesterday</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:center; font-size:0.85rem;">
+                <div style="color:var(--sand);"><i data-lucide="bookmark" style="width:16px; height:16px;"></i></div>
+                <div>
+                  <div style="font-weight:600; color:var(--white);">Bookmarked Spinner Dolphin</div>
+                  <div style="color:var(--text-muted); font-size:0.75rem;">3 days ago</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -270,7 +223,7 @@
   <script src="./js/script.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Session check (exactly same as Cultural Festivals)
+      // 1. Session check
       if (localStorage.getItem('stackly_logged_in') !== 'true') {
         window.location.replace('login.html');
       }
@@ -283,39 +236,19 @@
       const usernameDisplay = document.getElementById('usernameDisplay');
       const avatarName = document.getElementById('avatarName');
 
-      if (welcomeUser) welcomeUser.innerText = `Welcome Back, ${registeredName}`;
+      if (welcomeUser) {
+        welcomeUser.innerText = `Welcome Back, ${registeredName}`;
+        if (window.initLetterReveal) {
+          window.initLetterReveal(welcomeUser);
+        }
+      }
       if (usernameDisplay) usernameDisplay.innerText = registeredEmail;
       if (avatarName) {
         const initials = registeredName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
         avatarName.innerText = initials || 'V';
       }
 
-      // 3. Tab switching logic
-      const menuItems = document.querySelectorAll('.sidebar-menu-item');
-      const tabPanels = document.querySelectorAll('.tab-panel');
-
-      menuItems.forEach(item => {
-        const link = item.querySelector('a');
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const targetTab = link.getAttribute('data-tab');
-
-          // Set active menu item
-          menuItems.forEach(mi => mi.classList.remove('active'));
-          item.classList.add('active');
-
-          // Show targeted panel
-          tabPanels.forEach(panel => {
-            if (panel.id === `panel${targetTab.charAt(0).toUpperCase() + targetTab.slice(1)}`) {
-              panel.style.display = 'block';
-            } else {
-              panel.style.display = 'none';
-            }
-          });
-        });
-      });
-
-      // 4. Scenario Toggles Interaction
+      // 3. Scenario Toggles Interaction
       const devToggles = document.querySelectorAll('.device-toggle');
       devToggles.forEach(toggle => {
         toggle.addEventListener('change', () => {
@@ -334,32 +267,7 @@
         });
       });
 
-      // 5. Remove Bookmark Logic
-      const bookmarkCountEl = document.getElementById('bookmarkCount');
-      const removeButtons = document.querySelectorAll('.remove-bookmark');
-      removeButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const speciesName = btn.getAttribute('data-species');
-          btn.parentElement.remove();
-          
-          // Count remaining
-          const remaining = document.querySelectorAll('.remove-bookmark').length;
-          bookmarkCountEl.innerText = `${remaining} Species`;
-          
-          showToast(`Removed ${speciesName} from Bookmarks`);
-        });
-      });
-
-      // 6. Settings Form Submit Action
-      const settingsForm = document.getElementById('settingsForm');
-      if (settingsForm) {
-        settingsForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          showToast("Alert preferences saved successfully!");
-        });
-      }
-
-      // 7. Logout handler
+      // 4. Logout handler
       const logoutLink = document.getElementById('logoutLink');
       if (logoutLink) {
         logoutLink.addEventListener('click', (e) => {
