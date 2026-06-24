@@ -111,6 +111,60 @@
             </div>
           </div>
 
+          <!-- Campaign Categories & Tag Cloud -->
+          <div class="dashboard-panel glass fade-in-up-anim" style="animation-delay: 0.15s;">
+            <div class="dashboard-panel-header">
+              <h2 class="dashboard-panel-title scramble-trigger" data-scramble="CAMPAIGN CATEGORIES">CAMPAIGN CATEGORIES</h2>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;">Filter or browse active campaigns by ecological domain.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:10px;">
+              <div class="glass-light" style="padding:8px 14px; border-radius:20px; display:flex; align-items:center; gap:8px; cursor:pointer; transition:var(--transition); font-size:0.85rem;" onmouseover="this.style.background='rgba(0, 180, 216, 0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+                <span style="width: 8px; height: 8px; background:var(--sea-green); border-radius:50%; box-shadow: 0 0 6px var(--sea-green);"></span>
+                <span style="font-weight:600; color:var(--white);">Reef Restorations</span>
+                <span style="background:rgba(255,255,255,0.1); padding:2px 6px; border-radius:10px; font-size:0.75rem; color:var(--text-muted);">4 Active</span>
+              </div>
+              <div class="glass-light" style="padding:8px 14px; border-radius:20px; display:flex; align-items:center; gap:8px; cursor:pointer; transition:var(--transition); font-size:0.85rem;" onmouseover="this.style.background='rgba(0, 180, 216, 0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+                <span style="width: 8px; height: 8px; background:var(--sea-green); border-radius:50%; box-shadow: 0 0 6px var(--sea-green);"></span>
+                <span style="font-weight:600; color:var(--white);">Coastal Cleanups</span>
+                <span style="background:rgba(255,255,255,0.1); padding:2px 6px; border-radius:10px; font-size:0.75rem; color:var(--text-muted);">3 Active</span>
+              </div>
+              <div class="glass-light" style="padding:8px 14px; border-radius:20px; display:flex; align-items:center; gap:8px; cursor:pointer; transition:var(--transition); font-size:0.85rem;" onmouseover="this.style.background='rgba(0, 180, 216, 0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+                <span style="width: 8px; height: 8px; background:var(--sea-green); border-radius:50%; box-shadow: 0 0 6px var(--sea-green);"></span>
+                <span style="font-weight:600; color:var(--white);">Fauna Surveys</span>
+                <span style="background:rgba(255,255,255,0.1); padding:2px 6px; border-radius:10px; font-size:0.75rem; color:var(--text-muted);">2 Active</span>
+              </div>
+              <div class="glass-light" style="padding:8px 14px; border-radius:20px; display:flex; align-items:center; gap:8px; cursor:pointer; transition:var(--transition); font-size:0.85rem;" onmouseover="this.style.background='rgba(0, 180, 216, 0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+                <span style="width: 8px; height: 8px; background:var(--accent); border-radius:50%; box-shadow: 0 0 6px var(--accent);"></span>
+                <span style="font-weight:600; color:var(--white);">Education Programs</span>
+                <span style="background:rgba(255,255,255,0.1); padding:2px 6px; border-radius:10px; font-size:0.75rem; color:var(--text-muted);">1 Active</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Completed Campaigns Archive -->
+          <div class="dashboard-panel glass fade-in-up-anim" style="animation-delay: 0.25s;">
+            <div class="dashboard-panel-header">
+              <h2 class="dashboard-panel-title scramble-trigger" data-scramble="COMPLETED ARCHIVE">COMPLETED ARCHIVE</h2>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;">Successfully completed historical preservation campaigns.</p>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div class="glass-light" style="padding:14px; border-radius:8px; display:flex; flex-direction:column; gap:8px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                  <h4 class="gradient-flow-text" style="font-weight:700; font-size:0.95rem; margin:0;">Great Barrier Reef Survey 2025</h4>
+                  <span style="background:rgba(42, 157, 143, 0.15); color:var(--sea-green); padding:2px 8px; border-radius:12px; font-size:0.7rem; font-weight:700;">SUCCESS</span>
+                </div>
+                <p class="text-mask-reveal" style="font-size:0.8rem; color:var(--text-muted); margin:0;">Completed 48 marine biological survey tracks and recorded critical coral bleaching profiles.</p>
+              </div>
+              <div class="glass-light" style="padding:14px; border-radius:8px; display:flex; flex-direction:column; gap:8px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                  <h4 class="gradient-flow-text" style="font-weight:700; font-size:0.95rem; margin:0;">Thames Estuary Waste Cleanup</h4>
+                  <span style="background:rgba(42, 157, 143, 0.15); color:var(--sea-green); padding:2px 8px; border-radius:12px; font-size:0.7rem; font-weight:700;">SUCCESS</span>
+                </div>
+                <p class="text-mask-reveal" style="font-size:0.8rem; color:var(--text-muted); margin:0;">Recovered 1.2 metric tons of microplastics and discarded fishing nets from estuary basins.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <!-- RIGHT COLUMN: System Health Logs & Metrics -->
@@ -170,6 +224,46 @@
                 <div class="gradient-flow-text letter-reveal-trigger" style="font-weight:700; font-size:0.95rem; margin-bottom:6px;">Total Campaigns Active: 3</div>
                 <br>
                 <div class="text-fill-anim" style="font-weight:800; font-size:1.15rem;">TARGET VOLUNTEERS: 75%</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scheduled Operations Calendar -->
+          <div class="dashboard-panel glass fade-in-up-anim" style="width: 100%; animation-delay: 0.3s;">
+            <div class="dashboard-panel-header">
+              <h2 class="dashboard-panel-title scramble-trigger" data-scramble="OPERATIONS CALENDAR">OPERATIONS CALENDAR</h2>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;">Upcoming field actions and logistical milestones.</p>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="background:rgba(0, 180, 216, 0.1); border:1px solid rgba(0, 180, 216, 0.2); padding:6px 10px; border-radius:6px; text-align:center; min-width:55px;">
+                  <div style="font-size:0.7rem; color:var(--accent); font-weight:700; text-transform:uppercase;">Jun</div>
+                  <div style="font-size:1.1rem; color:var(--white); font-weight:800; line-height:1.1;">28</div>
+                </div>
+                <div style="display:flex; flex-direction:column;">
+                  <h4 class="letter-reveal-trigger" style="font-size:0.9rem; font-weight:700; color:var(--white); margin:0 0 2px 0;">Equipment Dispatch</h4>
+                  <p style="font-size:0.75rem; color:var(--text-muted); margin:0;">Shipping diving gear and survey equipment to Queensland base.</p>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; border-top:1px solid rgba(255,255,255,0.05); padding-top:12px;">
+                <div style="background:rgba(0, 180, 216, 0.1); border:1px solid rgba(0, 180, 216, 0.2); padding:6px 10px; border-radius:6px; text-align:center; min-width:55px;">
+                  <div style="font-size:0.7rem; color:var(--accent); font-weight:700; text-transform:uppercase;">Jul</div>
+                  <div style="font-size:1.1rem; color:var(--white); font-weight:800; line-height:1.1;">05</div>
+                </div>
+                <div style="display:flex; flex-direction:column;">
+                  <h4 class="letter-reveal-trigger" style="font-size:0.9rem; font-weight:700; color:var(--white); margin:0 0 2px 0;">Site Assessment</h4>
+                  <p style="font-size:0.75rem; color:var(--text-muted); margin:0;">Beach survey and shoreline transects mapping in Cornwall.</p>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; border-top:1px solid rgba(255,255,255,0.05); padding-top:12px;">
+                <div style="background:rgba(0, 180, 216, 0.1); border:1px solid rgba(0, 180, 216, 0.2); padding:6px 10px; border-radius:6px; text-align:center; min-width:55px;">
+                  <div style="font-size:0.7rem; color:var(--accent); font-weight:700; text-transform:uppercase;">Jul</div>
+                  <div style="font-size:1.1rem; color:var(--white); font-weight:800; line-height:1.1;">12</div>
+                </div>
+                <div style="display:flex; flex-direction:column;">
+                  <h4 class="letter-reveal-trigger" style="font-size:0.9rem; font-weight:700; color:var(--white); margin:0 0 2px 0;">Pre-Survey Briefing</h4>
+                  <p style="font-size:0.75rem; color:var(--text-muted); margin:0;">Virtual alignment for Maui humpback whale migration tracking crews.</p>
+                </div>
               </div>
             </div>
           </div>

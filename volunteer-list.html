@@ -121,22 +121,146 @@
             </div>
           </div>
 
+          <!-- Recent Applications Activity Log -->
+          <div class="dashboard-panel glass fade-in-up-anim" style="animation-delay: 0.15s;">
+            <div class="dashboard-panel-header">
+              <h2 class="dashboard-panel-title scramble-trigger" data-scramble="APPLICATION LOGS">APPLICATION LOGS</h2>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;">Live feed of volunteer registration and intake activity.</p>
+            <div style="display:flex; flex-direction:column; gap:12px;" id="activityLogContainer">
+              <div class="glass-light" style="padding:12px; border-radius:8px; display:flex; align-items:center; gap:12px;">
+                <div style="width:32px; height:32px; border-radius:50%; background:rgba(245, 158, 11, 0.1); border:1px solid rgba(245, 158, 11, 0.2); display:flex; align-items:center; justify-content:center; color:#F59E0B;">
+                  <i data-lucide="user-plus" style="width:14px; height:14px;"></i>
+                </div>
+                <div style="flex:1;">
+                  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+                    <span style="font-size:0.85rem; font-weight:700; color:var(--white);">Sarah Jenkins</span>
+                    <span style="font-size:0.7rem; color:var(--text-muted);">2 mins ago</span>
+                  </div>
+                  <p style="font-size:0.75rem; color:var(--text-muted); margin:0;">Applied for <span style="color:var(--accent);">Beach Cleanups</span> campaign.</p>
+                </div>
+              </div>
+              <div class="glass-light" style="padding:12px; border-radius:8px; display:flex; align-items:center; gap:12px;">
+                <div style="width:32px; height:32px; border-radius:50%; background:rgba(16, 185, 129, 0.1); border:1px solid rgba(16, 185, 129, 0.2); display:flex; align-items:center; justify-content:center; color:#10B981;">
+                  <i data-lucide="check-circle" style="width:14px; height:14px;"></i>
+                </div>
+                <div style="flex:1;">
+                  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+                    <span style="font-size:0.85rem; font-weight:700; color:var(--white);">Alice Vance</span>
+                    <span style="font-size:0.7rem; color:var(--text-muted);">1 hour ago</span>
+                  </div>
+                  <p style="font-size:0.75rem; color:var(--text-muted); margin:0;">Approved for <span style="color:var(--sea-green);">Coral Restoration</span> campaign.</p>
+                </div>
+              </div>
+              <div class="glass-light" style="padding:12px; border-radius:8px; display:flex; align-items:center; gap:12px;">
+                <div style="width:32px; height:32px; border-radius:50%; background:rgba(16, 185, 129, 0.1); border:1px solid rgba(16, 185, 129, 0.2); display:flex; align-items:center; justify-content:center; color:#10B981;">
+                  <i data-lucide="check-circle" style="width:14px; height:14px;"></i>
+                </div>
+                <div style="flex:1;">
+                  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+                    <span style="font-size:0.85rem; font-weight:700; color:var(--white);">Marcus Broady</span>
+                    <span style="font-size:0.7rem; color:var(--text-muted);">3 hours ago</span>
+                  </div>
+                  <p style="font-size:0.75rem; color:var(--text-muted); margin:0;">Approved for <span style="color:var(--sea-green);">Ocean Plastic Cleanup</span> campaign.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        <!-- RIGHT COLUMN: Roster Insights Console (Custom Animations Showcase) -->
-        <div class="dashboard-panel glass fade-in-up-anim" style="align-self: flex-start; width: 100%; animation-delay: 0.2s;">
-          <div class="dashboard-panel-header">
-            <h2 class="dashboard-panel-title scramble-trigger" data-scramble="ROSTER INSIGHTS">ROSTER INSIGHTS</h2>
-          </div>
-          <div style="display:flex; flex-direction:column; gap:15px;">
-            <div>
-              <h4 class="scramble-trigger" data-scramble="ENROLLMENT RATIO" style="font-family:var(--font-heading); font-weight:800; font-size:1.1rem; color:var(--accent); margin:0 0 5px;">ENROLLMENT RATIO</h4>
-              <p class="text-mask-reveal" style="font-size:0.8rem; color:var(--text-muted); margin:0;">Track campaign intakes, verify records, and authorize volunteer approvals.</p>
+        <!-- RIGHT COLUMN: Roster Insights & Directory -->
+        <div style="display:flex; flex-direction:column; gap:24px; align-self: flex-start;" class="reveal-right active">
+          <!-- Roster Insights Console -->
+          <div class="dashboard-panel glass fade-in-up-anim" style="width: 100%; animation-delay: 0.2s;">
+            <div class="dashboard-panel-header">
+              <h2 class="dashboard-panel-title scramble-trigger" data-scramble="ROSTER INSIGHTS">ROSTER INSIGHTS</h2>
             </div>
-            <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top:12px;">
-              <div class="gradient-flow-text letter-reveal-trigger" style="font-weight:700; font-size:0.95rem; margin-bottom:6px;">Total Registered Volunteers: 142</div>
-              <br>
-              <div class="text-fill-anim" style="font-weight:800; font-size:1.15rem;">CAPACITY FILLED: 84%</div>
+            <div style="display:flex; flex-direction:column; gap:15px;">
+              <div>
+                <h4 class="scramble-trigger" data-scramble="ENROLLMENT RATIO" style="font-family:var(--font-heading); font-weight:800; font-size:1.1rem; color:var(--accent); margin:0 0 5px;">ENROLLMENT RATIO</h4>
+                <p class="text-mask-reveal" style="font-size:0.8rem; color:var(--text-muted); margin:0;">Track campaign intakes, verify records, and authorize volunteer approvals.</p>
+              </div>
+              <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top:12px;">
+                <div class="gradient-flow-text letter-reveal-trigger" style="font-weight:700; font-size:0.95rem; margin-bottom:6px;">Total Registered Volunteers: 142</div>
+                <br>
+                <div class="text-fill-anim" style="font-weight:800; font-size:1.15rem;">CAPACITY FILLED: 84%</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Volunteer Skills & Demographics Profile -->
+          <div class="dashboard-panel glass fade-in-up-anim" style="width: 100%; animation-delay: 0.25s;">
+            <div class="dashboard-panel-header">
+              <h2 class="dashboard-panel-title scramble-trigger" data-scramble="SKILLS DISTRIBUTION">SKILLS DISTRIBUTION</h2>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;">Demographic segmentation of active volunteer certifications.</p>
+            <div style="display:flex; flex-direction:column; gap:14px;">
+              <div class="skill-item">
+                <div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:4px;">
+                  <span style="font-weight:600; color:var(--white);">Scuba Specialists (Rescue/Divemasters)</span>
+                  <span style="color:var(--accent); font-weight:600;">45%</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill-animated" style="width: 45%;"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:4px;">
+                  <span style="font-weight:600; color:var(--white);">Marine Biologists & Researchers</span>
+                  <span style="color:var(--sea-green); font-weight:600;">30%</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill-animated" style="width: 30%; background:var(--sea-green);"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:4px;">
+                  <span style="font-weight:600; color:var(--white);">General Shoreline Support Crew</span>
+                  <span style="color:#F59E0B; font-weight:600;">25%</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill-animated" style="width: 25%; background:#F59E0B;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Regional Coordinator Directory -->
+          <div class="dashboard-panel glass fade-in-up-anim" style="width: 100%; animation-delay: 0.3s;">
+            <div class="dashboard-panel-header">
+              <h2 class="dashboard-panel-title scramble-trigger" data-scramble="REGIONAL COORDINATORS">REGIONAL COORDINATORS</h2>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;">Local organization leads for coordination.</p>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div class="glass-light" style="padding:10px; border-radius:8px; display:flex; justify-content:space-between; align-items:center; border:1px solid rgba(255,255,255,0.08); transition:var(--transition);" onmouseover="this.style.borderColor='rgba(0,180,216,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+                <div style="display:flex; align-items:center; gap:10px;">
+                  <div style="width:36px; height:36px; border-radius:50%; background:var(--primary); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.85rem; box-shadow:0 0 8px rgba(0,119,182,0.4);">
+                    EL
+                  </div>
+                  <div>
+                    <h4 style="font-size:0.85rem; font-weight:700; color:var(--white); margin:0;">Elena Rostova</h4>
+                    <p style="font-size:0.75rem; color:var(--text-muted); margin:0;">APAC Coordinator</p>
+                  </div>
+                </div>
+                <a href="mailto:elena@conservation.org" style="color:var(--accent); display:flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:50%; background:rgba(255,255,255,0.05); transition:var(--transition);" onmouseover="this.style.background='var(--accent)'; this.style.color='white'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.color='var(--accent)'">
+                  <i data-lucide="mail" style="width:14px; height:14px;"></i>
+                </a>
+              </div>
+              <div class="glass-light" style="padding:10px; border-radius:8px; display:flex; justify-content:space-between; align-items:center; border:1px solid rgba(255,255,255,0.08); transition:var(--transition);" onmouseover="this.style.borderColor='rgba(0,180,216,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+                <div style="display:flex; align-items:center; gap:10px;">
+                  <div style="width:36px; height:36px; border-radius:50%; background:var(--sea-green); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.85rem; box-shadow:0 0 8px rgba(42,157,143,0.4);">
+                    TH
+                  </div>
+                  <div>
+                    <h4 style="font-size:0.85rem; font-weight:700; color:var(--white); margin:0;">Tom Harris</h4>
+                    <p style="font-size:0.75rem; color:var(--text-muted); margin:0;">Europe Operations</p>
+                  </div>
+                </div>
+                <a href="mailto:tom@conservation.org" style="color:var(--accent); display:flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:50%; background:rgba(255,255,255,0.05); transition:var(--transition);" onmouseover="this.style.background='var(--accent)'; this.style.color='white'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.color='var(--accent)'">
+                  <i data-lucide="mail" style="width:14px; height:14px;"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -210,6 +334,32 @@
             
             // Remove actions
             e.target.parentElement.innerHTML = `<span style="color:var(--text-muted); font-size:0.8rem;"><i data-lucide="check" style="width:16px; height:16px; vertical-align:-3px; stroke:#10B981;"></i> Approved</span>`;
+            
+            // Dynamically add to Application Logs if container exists
+            const activityContainer = document.getElementById('activityLogContainer');
+            if (activityContainer) {
+              const newLog = document.createElement('div');
+              newLog.className = 'glass-light card-added';
+              newLog.style.padding = '12px';
+              newLog.style.borderRadius = '8px';
+              newLog.style.display = 'flex';
+              newLog.style.alignItems = 'center';
+              newLog.style.gap = '12px';
+              newLog.innerHTML = `
+                <div style="width:32px; height:32px; border-radius:50%; background:rgba(16, 185, 129, 0.1); border:1px solid rgba(16, 185, 129, 0.2); display:flex; align-items:center; justify-content:center; color:#10B981;">
+                  <i data-lucide="check-circle" style="width:14px; height:14px;"></i>
+                </div>
+                <div style="flex:1;">
+                  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+                    <span style="font-size:0.85rem; font-weight:700; color:var(--white);">${name}</span>
+                    <span style="font-size:0.7rem; color:var(--text-muted);">Just now</span>
+                  </div>
+                  <p style="font-size:0.75rem; color:var(--text-muted); margin:0;">Approved for campaign.</p>
+                </div>
+              `;
+              activityContainer.insertBefore(newLog, activityContainer.firstChild);
+            }
+
             if (typeof lucide !== 'undefined') lucide.createIcons();
             
             showToast(`Approved Volunteer: ${name}`);
