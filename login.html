@@ -76,10 +76,12 @@
           localStorage.setItem('stackly_user_role', role);
           localStorage.setItem('stackly_user_email', email);
           
-          // If no registered name exists, save a default one based on email prefix
-          if (!localStorage.getItem('stackly_registered_name')) {
+          // Update registration name if email changes or is empty
+          const registeredEmail = localStorage.getItem('stackly_registered_email');
+          if (registeredEmail !== email || !localStorage.getItem('stackly_registered_name')) {
             const defaultName = email.split('@')[0].replace(/[^a-zA-Z]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
             localStorage.setItem('stackly_registered_name', defaultName || 'Eco Advocate');
+            localStorage.setItem('stackly_registered_email', email);
           }
 
           // Redirect to appropriate dashboard

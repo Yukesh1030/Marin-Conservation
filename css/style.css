@@ -2294,6 +2294,12 @@ input:checked + .slider:before {
     gap: 20px;
   }
   
+  .subpage-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
   .dashboard-grid {
     grid-template-columns: 1fr;
   }
@@ -2666,6 +2672,9 @@ input:checked + .slider:before {
 
 /* Sub-page Specific Headers */
 .subpage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 25px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding-bottom: 15px;
