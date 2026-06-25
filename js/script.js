@@ -373,13 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 16. Dynamic Navbar Login/Dashboard Button
   const navAuthItem = document.getElementById('navAuthItem');
   if (navAuthItem) {
-    if (localStorage.getItem('stackly_logged_in') === 'true') {
-      const role = localStorage.getItem('stackly_user_role');
-      const dashboardUrl = role === 'seller' ? './sellerdashboard.html' : './customerdashboard.html';
-      navAuthItem.innerHTML = `<a href="${dashboardUrl}" class="btn nav-btn" style="background: linear-gradient(135deg, var(--sea-green), var(--accent));">Login</a>`;
-    } else {
-      navAuthItem.innerHTML = `<a href="./login.html" class="btn nav-btn">Login</a>`;
-    }
+    navAuthItem.innerHTML = `<a href="./login.html" class="btn nav-btn">Login</a>`;
   }
 
   // 17. Letter Reveal Animation Splitter

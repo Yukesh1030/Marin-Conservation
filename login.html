@@ -64,6 +64,11 @@
   <script src="./js/script.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Clear session details (acts like logout when user visits login page)
+      localStorage.removeItem('stackly_logged_in');
+      localStorage.removeItem('stackly_user_role');
+      localStorage.removeItem('stackly_user_email');
+
       const loginForm = document.getElementById('loginForm');
       if (loginForm) {
         loginForm.addEventListener('submit', function(e) {
@@ -76,13 +81,7 @@
           localStorage.setItem('stackly_user_role', role);
           localStorage.setItem('stackly_user_email', email);
           
-          // Update registration name if email changes or is empty
-          const registeredEmail = localStorage.getItem('stackly_registered_email');
-          if (registeredEmail !== email || !localStorage.getItem('stackly_registered_name')) {
-            const defaultName = email.split('@')[0].replace(/[^a-zA-Z]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-            localStorage.setItem('stackly_registered_name', defaultName || 'Eco Advocate');
-            localStorage.setItem('stackly_registered_email', email);
-          }
+
 
           // Redirect to appropriate dashboard
           if (role === 'seller') {
